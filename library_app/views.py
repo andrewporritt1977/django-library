@@ -21,5 +21,20 @@ def logout(request):
 
 def login(request):
     """ login func """
-    login_form = LibraryLoginForm()
+    if request.method == "POST":
+        login_form = LibraryLoginForm(request.POST)
+
+        if login_form.is_valid():
+            user = auth.authenticate(username=request.POST['username'],
+                                    password=request.POST['password'])
+
+            
+            if user:
+                auth.login(user=user, request=request)
+                messages.success(request, "You have successfully logged into the Library")
+            else: 
+                login_form.add_error(None, "Sorry, some of your details are incorrect. Please try again")
+
+    else:
+        login_form = LibraryLoginForm()
     return render(request, 'login.html', {'login_form': login_form})
