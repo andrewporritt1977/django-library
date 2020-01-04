@@ -1,14 +1,21 @@
 {% extends 'base.html' %}
 
+{% block page_title %}Home{% endblock %}
+
+{% block page_heading %}Home{% endblock %}
+
+
 {% block content %}
 <body>
-    <h1>Library Home</h1>
     <nav>
         <ul>
-            <li><a href="{% url 'login' %}">Login</a></li>
-            <li><a href="{% url 'logout' %}">Logout</a></li>
-            <li><a href="#">Sign Up</a></li>
-            <li><a href="#">Card</a></li>
+            {% if user.is_authenticated %}
+                <li><a href="{% url 'logout' %}">Logout</a></li>
+                <li><a href="#">Card</a></li>
+            {% else %}
+                <li><a href="{% url 'login' %}">Login</a></li>
+                <li><a href="{% url 'signup' %}">Sign Up</a></li>
+            {% endif %}
         </ul>
     </nav>
     <hr>
