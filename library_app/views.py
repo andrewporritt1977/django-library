@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, reverse
 from django.contrib import auth, messages
 from django.views.generic import TemplateView
 from django.contrib.auth.decorators import login_required
-from .forms import LibraryLoginForm
+from .forms import LibraryLoginForm, UserSignupForm
 
 # Create your views here.
 class BasePageView(TemplateView):
@@ -46,4 +46,6 @@ def login(request):
     return render(request, 'login.html', {'login_form': login_form})
 
 def signup(request):
-    return render(request, 'signup.html')
+    signup_form = UserSignupForm()
+    return render(request, 'signup.html', {
+        "signup_form" : signup_form})
