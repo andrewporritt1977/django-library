@@ -1,12 +1,18 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, reverse
+from django.contrib import auth
 from django.views.generic import TemplateView
 
 # Create your views here.
 class HomePageView(TemplateView):
     template_name = 'base.html'
 
-class TestPageView(TemplateView):
-    template_name = 'test.html'
+class LoginPageView(TemplateView):
+    template_name = 'login.html'
 
-class AgainPageView(TemplateView):
-    template_name = 'again.html'
+class LibraryPageView(TemplateView):
+    template_name = 'library_view.html'
+
+def logout(request):
+    """ user logout """
+    auth.logout(request)
+    return(redirect(reverse('home')))
