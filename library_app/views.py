@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, reverse
-from django.contrib import auth
+from django.contrib import auth, messages
 from django.views.generic import TemplateView
 
 # Create your views here.
@@ -15,4 +15,5 @@ class LibraryPageView(TemplateView):
 def logout(request):
     """ user logout """
     auth.logout(request)
-    return(redirect(reverse('home')))
+    messages.success(request, 'You have successfully logged out of the Library. Come again soon!')
+    return(redirect(reverse('login')))

@@ -10,5 +10,13 @@
             <li><a href="#">Card</a></li>
         </ul>
     </nav>
+    <hr>
+    {% if messages %}
+        <div>
+            {% for message in messages %}
+                {{ message }}
+            {% endfor %}
+        </div>
+    {% endif %}
 </body>
 {% endblock %}
