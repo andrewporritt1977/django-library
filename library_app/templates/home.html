@@ -18,6 +18,13 @@
         
         <script src="" async defer></script>
 
-        <h1>Home Page!</h1>
+        <header>
+            <a href="{% url 'again' %}">Again</a> | <a href="{% url 'test' %}">test</a>
+        </header>
+        <Body>
+            <div>Info Below is from page links. </div>
+        {% block content %}
+        {% endblock %}
+        </Body>
     </body>
 </html>
