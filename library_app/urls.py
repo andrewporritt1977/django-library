@@ -1,7 +1,7 @@
 from django.urls import path
 from django.conf.urls import url, include
 from .views import HomePageView, LibraryPageView, logout, login, signup, user_card
-import url_reset
+from library_app import url_reset
 
 urlpatterns = [
     path('', HomePageView.as_view(), name='home'),
