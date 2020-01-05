@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, reverse
 from django.contrib import auth, messages
 from django.views.generic import TemplateView
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
 from .forms import LibraryLoginForm, UserSignupForm
 
 # Create your views here.
@@ -46,6 +47,30 @@ def login(request):
     return render(request, 'login.html', {'login_form': login_form})
 
 def signup(request):
-    signup_form = UserSignupForm()
+    if request.user.is_authenticated:
+        return redirect(reverse('home'))
+    
+    if request.method == "POST":
+        signup_form = UserSignupForm(request.POST)
+        
+        if signup_form.is_valid():
+            signup_form.save()
+
+            user = auth.authenticate(username=request.POST['username'],
+                                     password=request.POST['password1'])
+                                
+            if user:
+                auth.login(user=user, request=request)
+                messages.success(request, "You have successfully registered with the Library")
+                """return redirect(reverse('home'))"""
+            else :
+                messages.error(request, "Apologies, unable to sign up at this time")
+    else:
+        signup_form = UserSignupForm()
     return render(request, 'signup.html', {
         "signup_form" : signup_form})
+
+def user_card(request):
+    """ view user'slibrary card """
+    user = User.objects.get(email=request.user.email)
+    return render(request, 'card.html', { "user_card" : user})
