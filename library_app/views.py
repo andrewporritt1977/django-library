@@ -74,3 +74,7 @@ def user_card(request):
     """ view user'slibrary card """
     user = User.objects.get(email=request.user.email)
     return render(request, 'card.html', { "user_card" : user})
+
+def password_reset_done(request):
+    """ over-rides default django done page """
+    return(render(request, 'password_reset_done.html'))
