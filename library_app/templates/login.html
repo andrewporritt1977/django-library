@@ -32,7 +32,7 @@
         {{ login_form }}
         <button type='submit' class='btn btn-primary' value='Submit'>Login</button>
     </form> 
-    <p>If you already have an account, you can <a href="{% url 'login' %}">sign in </a></p>
+    <p>If you already have an account, but can't remeber your password you can <a href="{% url 'password_reset' %}">reset </a>it here</p>
 </body>
 
 {% endblock %}
