@@ -11,4 +11,9 @@
     {% else %}
         <h2>Please <a href="{% url 'login' %}">log in</a> to browse the Library</h2>
     {% endif %}
+
+    {% if user.is_superuser %}
+        <br/>
+        <h3>You have the keys to the Library Yo!</h3>
+    {% endif %}
 {% endblock %}

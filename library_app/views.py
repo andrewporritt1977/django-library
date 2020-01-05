@@ -25,7 +25,7 @@ def logout(request):
 def login(request):
     """ login func """
     if request.user.is_authenticated:
-        return redirect(reverse('home'))
+        return redirect(reverse('library_view'))
 
     if request.method == "POST":
         login_form = LibraryLoginForm(request.POST)
@@ -38,7 +38,7 @@ def login(request):
             if user:
                 auth.login(user=user, request=request)
                 messages.success(request, "You have successfully logged into the Library")
-                return redirect(reverse('home'))
+                return redirect(reverse('library_view'))
             else: 
                 login_form.add_error(None, "Sorry, some of your details are incorrect. Please try again")
 
@@ -48,7 +48,7 @@ def login(request):
 
 def signup(request):
     if request.user.is_authenticated:
-        return redirect(reverse('home'))
+        return redirect(reverse('library_view'))
     
     if request.method == "POST":
         signup_form = UserSignupForm(request.POST)
