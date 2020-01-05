@@ -69,7 +69,8 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS':[os.path.join(os.path.dirname(__file__), 'templates'),
-        '/Users/andrewporritt/python-django/library_app/templates/user_management'
+        '/Users/andrewporritt/python-django/library_app/templates/user_management',
+        '/Users/andrewporritt/python-django/library_books/templates'
         ],
         'APP_DIRS': True,
         'OPTIONS': {

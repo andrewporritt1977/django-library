@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="row row-flex">
+{% for book in books %}
+    <h3>{{ book.title}}</h3>
+    <h4>{{ book.author}}</h4>
+    <h4>{{ book.genre}}</h4>
+    {% if user.is_superuser %} 
+        <h5>{{ book.price}}</h5>
+    {% endif %}
+{% endfor %}
+
+{% endblock %}
