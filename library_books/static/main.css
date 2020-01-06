@@ -1,0 +1,11 @@
+.lib_container{
+    display : flex;
+    flex-direction: row;
+}
+
+.lib_card{
+    background-color: bisque;
+    border-width: 1px;
+    border-radius: 12%;
+    border-style: solid;
+}
