@@ -12,7 +12,7 @@
         <title>{% block page_title %}{% endblock %}</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
+        <link rel="stylesheet" href="https://unpkg.com/cirrus-ui">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
         <link rel="stylesheet" href="{% static 'main.css'%}">
         <script defer src=""></script>
@@ -25,7 +25,7 @@
         <header>
 
         </header>
-        <Body class="coltest">
+        <Body class="container">
             <h1>{% block page_heading %}{% endblock %}</h1>
             <div>
                 <form action="{% url 'search' %}" method="get">
