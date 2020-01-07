@@ -12,9 +12,6 @@ class BasePageView(TemplateView):
 class HomePageView(TemplateView):
     template_name = 'home.html'
 
-class LibraryPageView(TemplateView):
-    template_name = 'library_view.html'
-
 @login_required
 def logout(request):
     """ user logout """
@@ -25,7 +22,7 @@ def logout(request):
 def login(request):
     """ login func """
     if request.user.is_authenticated:
-        return redirect(reverse('library_view'))
+        return redirect(reverse('books'))
 
     if request.method == "POST":
         login_form = LibraryLoginForm(request.POST)
@@ -38,7 +35,7 @@ def login(request):
             if user:
                 auth.login(user=user, request=request)
                 messages.success(request, "You have successfully logged into the Library")
-                return redirect(reverse('library_view'))
+                return redirect(reverse('books'))
             else: 
                 login_form.add_error(None, "Sorry, some of your details are incorrect. Please try again")
 
@@ -48,7 +45,7 @@ def login(request):
 
 def signup(request):
     if request.user.is_authenticated:
-        return redirect(reverse('library_view'))
+        return redirect(reverse('books'))
     
     if request.method == "POST":
         signup_form = UserSignupForm(request.POST)

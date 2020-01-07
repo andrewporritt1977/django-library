@@ -1,18 +1,24 @@
 {% extends 'library_view.html' %}
 {% block content %}
-<div class="lib_container">
-{% for book in books %}
-    <div class="lib_card">
-        <h3>{{ book.title}}</h3>
-        <h4>{{ book.author}}</h4>
-        <h4>{{ book.genre}}</h4>
-        {% if user.is_superuser %} 
-            <h5>£{{ book.price}}</h5>
-        {% endif %}
-        {% if book.archived %}
-            <h5>{{ book.archived }}</h5>
-        {% endif %}
-    </div>
-{% endfor %}
+
+    {% if user.is_authenticated %}
+            <h2>Welcome to the Library {{user}}</h2>
+            <div class="lib_container">
+                {% for book in books %}
+                    <div class="lib_card">
+                        <h3>{{ book.title}}</h3>
+                        <h4>{{ book.author}}</h4>
+                        <h4>{{ book.genre}}</h4>
+                {% if user.is_superuser %} 
+                    <h5>£{{ book.price}}</h5>
+                {% endif %}
+                {% if book.archived %}
+                    <h5>{{ book.archived }}</h5>
+                {% endif %}
+            </div>
+                {% endfor %}
+    {% else %}
+        <h2>Please <a href="{% url 'login' %}">log in</a> to browse the Library</h2>
+    {% endif %}
 </div>
 {% endblock %}

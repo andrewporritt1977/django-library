@@ -18,11 +18,13 @@ from django.urls import path, include
 from library_app import urls as library_urls
 from library_books import urls as book_urls
 from library_books.views import all_books
+from search import urls as urls_search
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', all_books, name='index'),
     path('library/', include (library_urls)),
+    path('search/', include (urls_search)),
     path('books/', include(book_urls)),
 
 ]
