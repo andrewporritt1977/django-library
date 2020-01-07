@@ -1,4 +1,9 @@
-{% extends 'library_view.html' %}
+{% extends 'base.html' %}
+
+{% block page_title %}Library{% endblock %}
+
+{% block page_heading %}Library{% endblock %}
+
 {% block content %}
 
     {% if user.is_authenticated %}
@@ -10,19 +15,20 @@
                 {% else %}
                     <div class="lib_card">
                 {% endif %}
-                        <h3>{{ book.title}}</h3>
-                        <h4>{{ book.author}}</h4>
-                        <h4>{{ book.genre}}</h4>
-                {% if not book.checkedOut %}
-                    <button>
-                        <i class="check_btn fas fa-book-open"></i>
-                    </button>
-                {% endif %}
+                        <p>{{ book.title}}</p>
+                        <p>{{ book.author}}</p>
+                        <p>{{ book.genre}}<p>
+
                 {% if user.is_superuser %} 
-                    <h5>£{{ book.price}}</h5>
+                    <p>£{{ book.price}}</p>
                 {% endif %}
                 {% if book.archived and is_superuser %}
-                    <h5>{{ book.archived }}</h5>
+                    <p>{{ book.archived }}</p>
+                {% endif %}
+                {% if not book.checkedOut %}
+                    <button class="check_btn">
+                        <i class="fas fa-book-open"></i>
+                    </button>
                 {% endif %}
             </div>
                 {% endfor %}
