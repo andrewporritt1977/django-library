@@ -1,15 +1,18 @@
 {% extends 'library_view.html' %}
-<link rel="stylesheet" href="{{ STATIC_URL }}main.css" />
 {% block content %}
-
-<div class="lib_card">
+<div class="lib_container">
 {% for book in books %}
-    <h3>{{ book.title}}</h3>
-    <h4>{{ book.author}}</h4>
-    <h4>{{ book.genre}}</h4>
-    {% if user.is_superuser %} 
-        <h5>£{{ book.price}}</h5>
-    {% endif %}
+    <div class="lib_card">
+        <h3>{{ book.title}}</h3>
+        <h4>{{ book.author}}</h4>
+        <h4>{{ book.genre}}</h4>
+        {% if user.is_superuser %} 
+            <h5>£{{ book.price}}</h5>
+        {% endif %}
+        {% if book.archived %}
+            <h5>{{ book.archived }}</h5>
+        {% endif %}
+    </div>
 {% endfor %}
 </div>
 {% endblock %}

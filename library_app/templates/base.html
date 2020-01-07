@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
@@ -11,6 +13,7 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
+        <link rel="stylesheet" href="{% static 'main.css'%}">
         <script defer src=""></script>
     </head>
     <body class="container">
@@ -21,7 +24,7 @@
         <header>
             <a href="{% url 'home' %}">Home</a> | <a href="{% url 'library_view' %}">Library</a>
         </header>
-        <Body>
+        <Body class="coltest">
             <h1>{% block page_heading %}{% endblock %}</h1>
         {% block content %}
         {% endblock %}

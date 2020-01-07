@@ -149,3 +149,10 @@ EMAIL_HOST_PASSWORD = os.getenv('EMAIL_PASSWORD')
 EMAIL_PORT = 587
 
 DEBUG = True
+
+STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [
+    'library_app/static'
+
+]
