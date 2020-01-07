@@ -21,7 +21,7 @@
                 {% if user.is_superuser %} 
                     <h5>£{{ book.price}}</h5>
                 {% endif %}
-                {% if book.archived %}
+                {% if book.archived and is_superuser %}
                     <h5>{{ book.archived }}</h5>
                 {% endif %}
             </div>
