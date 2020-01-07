@@ -5,10 +5,19 @@
             <h2>Welcome to the Library {{user}}</h2>
             <div class="lib_container">
                 {% for book in books %}
+                {% if book.checkedOut %}
+                    <div class="lib_card checked">
+                {% else %}
                     <div class="lib_card">
+                {% endif %}
                         <h3>{{ book.title}}</h3>
                         <h4>{{ book.author}}</h4>
                         <h4>{{ book.genre}}</h4>
+                {% if not book.checkedOut %}
+                    <button>
+                        <i class="check_btn fas fa-book-open"></i>
+                    </button>
+                {% endif %}
                 {% if user.is_superuser %} 
                     <h5>£{{ book.price}}</h5>
                 {% endif %}
