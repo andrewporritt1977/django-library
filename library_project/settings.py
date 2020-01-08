@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'library_app',
-    'library_books'
+    'library_books',
+    'django_filters'
 ]
 
 AUTHENTICATION_BACKENDS = ('django.contrib.auth.backends.ModelBackend',)
@@ -69,8 +70,8 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS':[os.path.join(os.path.dirname(__file__), 'templates'),
-        '/Users/andrewporritt/python-django/library_app/templates/user_management',
-        '/Users/andrewporritt/python-django/library_books/templates'
+        '/Users/andrewporritt/python-django/library_books/templates',
+        '/Users/andrewporritt/python-django/library_app/templates/registration'
         ],
         'APP_DIRS': True,
         'OPTIONS': {

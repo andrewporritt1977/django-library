@@ -72,6 +72,10 @@ def user_card(request):
     user = User.objects.get(email=request.user.email)
     return render(request, 'card.html', { "user_card" : user})
 
+
 def password_reset_done(request):
-    """ over-rides default django done page """
     return(render(request, 'password_reset_done.html'))
+
+def password_reset_complete(request):
+    return(render(request, 'password_reset_complete.html'))
+
