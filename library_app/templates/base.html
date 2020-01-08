@@ -28,7 +28,7 @@
         <Body class="container">
             <h1>{% block page_heading %}{% endblock %}</h1>
             <div>
-                <form action="{% url 'search' %}" method="get">
+                <form class="searchform" action="{% url 'search' %}" method="get">
                     <input type="text" name="bkSearch">
                     <button type="submit">Search</button>
                 </form>

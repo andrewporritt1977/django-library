@@ -13,7 +13,7 @@
         </div>
     {% endif %}
 
-    <form method="POST">  
+    <form method="POST" class="loginform">  
         {% csrf_token %} 
         {{ login_form }}
         <button type='submit' class='btn btn-primary' value='Submit'>Login</button>

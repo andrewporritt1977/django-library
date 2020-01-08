@@ -1,5 +1,9 @@
+/* General containers css */
 .container{
-    padding:5rem;
+    padding-top:5rem;
+    padding-left:8rem;
+    padding-right:8rem;
+    
 }
 
 .lib_container{
@@ -9,6 +13,21 @@
     flex-wrap: wrap;
 }
 
+/* buttons and components */
+.searchform{
+    max-width: 40%;
+}
+
+.signupform{
+    max-width: 40%;
+}
+
+.loginform{
+    max-width: 40%;
+}
+
+
+/* library cards css */
 .lib_card{
 
     background-color: rgb(224, 220, 228);
