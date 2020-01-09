@@ -5,3 +5,7 @@ from library_books.models import Book
 def book_search(request):
     books = Book.objects.filter(title__icontains=request.GET['bkSearch'])
     return render(request, "books.html", {"books" : books})
+
+def genre_filter(request):
+    books = Book.objects.filter(genre__icontains=request.GET['gFilter'])
+    return render(request, "books.html", {"books" : books})
