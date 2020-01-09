@@ -27,18 +27,19 @@
         </header>
         <Body class="container">
             <h1>{% block page_heading %}{% endblock %}</h1>
-            <div>
+            <div class="seach-filter">
                 <form class="searchform" action="{% url 'search' %}" method="get">
                     <input type="text" name="bkSearch">
                     <button type="submit">Search</button>
                 </form>
-                <select class="genreFilter" action="{% url 'filter' %}" method="get" name="genre">
+                <select class="genreFilter" action="{% url 'filter' %}" method="get">
+                            <option value=" ">Genre Filter</option>
                     {% for book in books %}
-                        <option value="{{book.genre}}">{{ book.genre }}</option>
+                            <option value="{{book.genre}}" name="gFilter">{{ book.genre }}</option>
                     {% endfor %}
                 </select>
             </div>
-        
+        <hr>
         <nav>
             <ul>
                 {% if user.is_authenticated %}

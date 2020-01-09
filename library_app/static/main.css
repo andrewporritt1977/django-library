@@ -14,7 +14,20 @@
 }
 
 /* buttons and components */
+.search-filter{
+    display: flex;
+    flex-wrap: wrap;
+}
 .searchform{
+    max-width: 40%;
+    box-sizing: border-box;
+}
+
+form.searchform{
+    max-width: 40%;
+}
+
+.genreFilter{
     max-width: 40%;
 }
 

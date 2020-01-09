@@ -25,7 +25,11 @@
                 {% if book.archived and is_superuser %}
                     <p>{{ book.archived }}</p>
                 {% endif %}
-                {% if not book.checkedOut %}
+                {% if book.checkedOut %}
+                    <button class="check_btn">
+                        <i class="fas fa-book"></i>
+                    </button>
+                {% else %}
                     <button class="check_btn">
                         <i class="fas fa-book-open"></i>
                     </button>
