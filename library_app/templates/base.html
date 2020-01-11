@@ -32,12 +32,15 @@
                     <input type="text" name="bkSearch">
                     <button type="submit">Search</button>
                 </form>
-                <select class="genreFilter" action="{% url 'filter' %}" method="get">
-                    <option value=" ">Genre Filter</option>
-                    {% for book in books %}
-                        <option value="{{book.genre}}" name="gFilter">{{ book.genre }}</option>
-                    {% endfor %}
-                </select>
+                <form class="genreFilter" action="{% url 'filter' %}" method="get">
+                    <select name="gFilter" onChange="form.submit();">
+                        <option value="{{ Book }}" selected="selected">Genre Filter</option>
+                        <option value="PD">PD</option>
+                        <option value="PA">PA</option>
+                        <option value="Other">Other</option>
+                    </select>
+                        <button action="/books/" type="submit">Reset</button>
+                </form>
             </div>
         <hr>
         <nav>
