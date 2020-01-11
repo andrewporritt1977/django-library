@@ -33,9 +33,9 @@
                     <button type="submit">Search</button>
                 </form>
                 <select class="genreFilter" action="{% url 'filter' %}" method="get">
-                            <option value=" ">Genre Filter</option>
+                    <option value=" ">Genre Filter</option>
                     {% for book in books %}
-                            <option value="{{book.genre}}" name="gFilter">{{ book.genre }}</option>
+                        <option value="{{book.genre}}" name="gFilter">{{ book.genre }}</option>
                     {% endfor %}
                 </select>
             </div>

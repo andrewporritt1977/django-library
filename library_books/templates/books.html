@@ -7,7 +7,7 @@
 {% block content %}
 
     {% if user.is_authenticated %}
-            <h2>Welcome to the Library {{user}}</h2>
+            <h1>Welcome to the Library {{user}}</h1>
             <div class="lib_container">
                 {% for book in books %}
                 {% if book.checkedOut %}
@@ -26,18 +26,18 @@
                     <p>{{ book.archived }}</p>
                 {% endif %}
                 {% if book.checkedOut %}
-                    <button class="check_btn">
-                        <i class="fas fa-book"></i>
+                    <button class="check_btn" name="check_in_out" type="submit">
+                        <i class="fas fa-book" onClick="check_in_out"></i>
                     </button>
                 {% else %}
-                    <button class="check_btn">
-                        <i class="fas fa-book-open"></i>
+                    <button class="check_btn" name="check_in_out" type="submit">
+                        <i class="fas fa-book-open" onClick="check_in_out"></i>
                     </button>
                 {% endif %}
             </div>
                 {% endfor %}
     {% else %}
-        <h2>Please <a href="{% url 'login' %}">log in</a> to browse the Library</h2>
+        <p>Please <a href="{% url 'login' %}">log in</a> to browse the Library</p>
     {% endif %}
 </div>
 {% endblock %}
