@@ -4,5 +4,5 @@ from .models import Book
 
 # Create your views here.
 def all_books(request):
-    books = Book.objects.all()
+    books = Book.objects.all().order_by("title")
     return render(request, "books.html", {"books" : books})
