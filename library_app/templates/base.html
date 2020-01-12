@@ -29,17 +29,19 @@
             <h1>{% block page_heading %}{% endblock %}</h1>
             <div class="seach-filter row">
                 <form class="searchform col-5" action="{% url 'search' %}" method="get">
-                    <input type="text" name="bkSearch">
-                    <button type="submit">Search</button>
+                    <input type="text" placeholder="Search" name="bkSearch" onChange="form.submit();">
                 </form>
-                <form class="genreFilter col-5" action="{% url 'filter' %}" method="get">
+                <form class="genreFilter col-5 row" action="{% url 'filter' %}" method="get">
                     <select name="gFilter" onChange="form.submit();">
                         <option value="{{ Book }}" selected="selected">Genre Filter</option>
                         <option value="PD">PD</option>
                         <option value="PA">PA</option>
                         <option value="Other">Other</option>
                     </select>
-                        <button action="/books/" type="submit">Reset</button>
+                        
+                </form>
+                <form class="genreFilter col-5 row" action="{% url 'filter' %}" method="get">
+                    <button class="reset_btn" action="/books/" type="submit" name="gFilter">Reset</button>
                 </form>
             </div>
         <hr>

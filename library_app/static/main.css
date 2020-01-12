@@ -36,13 +36,21 @@
     flex-wrap: wrap;
 }
 .searchform{
+
     max-width: 45%;
     flex-grow: 1;
 }
 
 .genreFilter{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     max-width: 45%;
     flex-grow: 1;
+}
+
+.reset_btn{
+    float : left;
 }
 
 /* registration forms */
