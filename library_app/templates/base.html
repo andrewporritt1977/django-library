@@ -28,10 +28,22 @@
         <Body class="container">
             <h1>{% block page_heading %}{% endblock %}</h1>
             <div class="seach-filter row">
-                <form class="searchform col-5" action="{% url 'search' %}" method="get">
+                <nav class="nav_section col 3">
+                    <ul>
+                        {% if user.is_authenticated %}
+                            <li><a href="{% url 'logout' %}">Logout</a></li>
+                            <li><a href="{% url 'user_card'%}">Card</a></li>
+                        {% else %}
+                            <li><a href="{% url 'login' %}">Login</a></li>
+                            <li><a href="{% url 'signup' %}">Sign Up</a></li>
+                        {% endif %}
+                        
+                    </ul>
+                </nav>
+                <form class="searchform col-3" action="{% url 'search' %}" method="get">
                     <input type="text" placeholder="Search" name="bkSearch" onChange="form.submit();">
                 </form>
-                <form class="genreFilter col-5 row" action="{% url 'filter' %}" method="get">
+                <form class="genreFilter col-3 row" action="{% url 'filter' %}" method="get">
                     <select name="gFilter" onChange="form.submit();">
                         <option value="{{ Book }}" selected="selected">Genre Filter</option>
                         <option value="PD">PD</option>
@@ -40,23 +52,11 @@
                     </select>
                         
                 </form>
-                <form class="genreFilter col-5 row" action="{% url 'filter' %}" method="get">
+                <form class="genreFilter col-2 row" action="{% url 'filter' %}" method="get">
                     <button class="reset_btn" action="/books/" type="submit" name="gFilter">Reset</button>
                 </form>
+
             </div>
-        <hr>
-        <nav class="nav_section">
-            <ul>
-                {% if user.is_authenticated %}
-                    <li><a href="{% url 'logout' %}">Logout</a></li>
-                    <li><a href="{% url 'user_card'%}">Card</a></li>
-                {% else %}
-                    <li><a href="{% url 'login' %}">Login</a></li>
-                    <li><a href="{% url 'signup' %}">Sign Up</a></li>
-                {% endif %}
-                
-            </ul>
-        </nav>
         <hr>
         {% block content %}
         {% endblock %}
