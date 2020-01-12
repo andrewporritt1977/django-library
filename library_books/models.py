@@ -10,10 +10,8 @@ class Book(models.Model):
     archived = models.BooleanField(default=False)
 
     def check_in_out(self):
-        """
-        Book check-in / check-out function
-        """
-        if (self.checkedOut == False):
+
+        if self.checkedOut == False:
             self.checkedOut = True
         else:
             self.checkedOut = False
@@ -21,3 +19,4 @@ class Book(models.Model):
 
     def __str__(self):
         return self.title
+        

@@ -8,4 +8,4 @@ def book_search(request):
 
 def genre_filter(request):
     books = Book.objects.filter(genre__icontains=request.GET['gFilter'])
-    return render(request, "books.html",{"books" : books})
+    return render(request, "books.html", {"books" : books})
