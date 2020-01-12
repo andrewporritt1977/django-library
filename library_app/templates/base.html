@@ -27,12 +27,12 @@
         </header>
         <Body class="container">
             <h1>{% block page_heading %}{% endblock %}</h1>
-            <div class="seach-filter">
-                <form class="searchform" action="{% url 'search' %}" method="get">
+            <div class="seach-filter row">
+                <form class="searchform col-5" action="{% url 'search' %}" method="get">
                     <input type="text" name="bkSearch">
                     <button type="submit">Search</button>
                 </form>
-                <form class="genreFilter" action="{% url 'filter' %}" method="get">
+                <form class="genreFilter col-5" action="{% url 'filter' %}" method="get">
                     <select name="gFilter" onChange="form.submit();">
                         <option value="{{ Book }}" selected="selected">Genre Filter</option>
                         <option value="PD">PD</option>
@@ -43,7 +43,7 @@
                 </form>
             </div>
         <hr>
-        <nav>
+        <nav class="nav_section">
             <ul>
                 {% if user.is_authenticated %}
                     <li><a href="{% url 'logout' %}">Logout</a></li>

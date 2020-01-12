@@ -7,7 +7,6 @@
 {% block content %}
 
     {% if user.is_authenticated %}
-            <h1>Welcome to the Library {{user}}</h1>
             <div class="lib_container">
                 {% for book in books %}
                 {% if book.checkedOut %}
