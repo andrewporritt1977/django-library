@@ -8,16 +8,7 @@ class Book(models.Model):
     price = models.DecimalField(max_digits=6, decimal_places=2)
     checkedOut = models.BooleanField(default=False)
     archived = models.BooleanField(default=False)
-
-    """
-    def check_in_out(self):
-
-        if self.checkedOut == False:
-            self.checkedOut = True
-        else:
-            self.checkedOut = False
-        self.save()
-    """
+    checked_by = models.CharField(max_length=254, default='')
 
     def __str__(self):
         return self.title

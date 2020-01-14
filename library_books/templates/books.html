@@ -25,13 +25,13 @@
                     <p>{{ book.archived }}</p>
                 {% endif %}
                 {% if book.checkedOut %}
-                    <button class="check_btn button button-outline" method="post" type="submit" onClick="location.href='{% url 'check_out' %}'">
+                    <a class="check_btn button button-outline" method="get" type="submit" href="{% url 'check_out' book.id %}">
                         <i class="fas fa-book"></i>
-                    </button>
+                    </a>
                 {% else %}
-                    <button class="check_btn button button-outline" method="post" type="submit" onClick="location.href='{% url 'check_out' %}'">
+                    <a class="check_btn button button-outline" method="get" type="submit" href="{% url 'check_out' book.id %}">
                         <i class="fas fa-book-open"></i>
-                    </button>
+                    </a>
                 {% endif %}
             </div>
                 {% endfor %}
