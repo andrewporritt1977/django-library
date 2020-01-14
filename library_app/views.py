@@ -3,6 +3,7 @@ from django.contrib import auth, messages
 from django.views.generic import TemplateView
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
+from library_books.models import Book
 from .forms import LibraryLoginForm, UserSignupForm
 
 # Create your views here.
@@ -69,8 +70,9 @@ def signup(request):
 
 def user_card(request):
     """ view user'slibrary card """
-    user = User.objects.get(email=request.user.email)
-    return render(request, 'card.html', { "user_card" : user})
+    user = request.user.username
+    books = Book.objects.all().order_by("title").filter(checked_by__icontains=user)
+    return render(request, 'card.html', {"books" : books})
 
 
 def password_reset_done(request):

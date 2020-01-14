@@ -7,38 +7,38 @@
 {% block content %}
 
     {% if user.is_authenticated %}
-            <div class="lib_container">
-                {% for book in books %}
-                {% if book.checkedOut %}
-                    <div class="lib_card checked">
-                {% else %}
-                    <div class="lib_card">
-                {% endif %}
-                        <p>{{ book.title}}</p>
-                        <p>{{ book.author}}</p>
-                        <p>{{ book.genre}}<p>
+        <div class="lib_container">
+            {% for book in books %}
+            {% if book.checkedOut %}
+                <div class="lib_card checked">
+            {% else %}
+                <div class="lib_card">
+            {% endif %}
+                <p>{{ book.title}}</p>
+                <p>{{ book.author}}</p>
+                <p>{{ book.genre}}<p>
 
-                {% if user.is_superuser %} 
-                    <p>£{{ book.price}}</p>
-                {% endif %}
-                {% if book.archived and is_superuser %}
-                    <p>{{ book.archived }}</p>
-                {% endif %}
-                {% if book.checkedOut %}
-                    <a class="check_btn button button-outline" method="get" type="submit" href="{% url 'check_out' book.id %}">
-                        <i class="fas fa-book"></i>
-                    </a>
-                {% else %}
-                    <a class="check_btn button button-outline" method="get" type="submit" href="{% url 'check_out' book.id %}">
-                        <i class="fas fa-book-open"></i>
-                    </a>
-                {% endif %}
-            </div>
-                {% endfor %}
+            {% if user.is_superuser %} 
+                <p>£{{ book.price}}</p>
+            {% endif %}
+            {% if book.archived and is_superuser %}
+                <p>{{ book.archived }}</p>
+            {% endif %}
+            {% if book.checkedOut %}
+                <a class="check_btn button button-outline" method="get" type="submit" href="{% url 'check_out' book.id %}">
+                    <i class="fas fa-book"></i>
+                </a>
+            {% else %}
+                <a class="check_btn button button-outline" method="get" type="submit" href="{% url 'check_out' book.id %}">
+                    <i class="fas fa-book-open"></i>
+                </a>
+            {% endif %}
+                </div>
+            {% endfor %}
     {% else %}
         <p>Please <a href="{% url 'login' %}">log in</a> to browse the Library</p>
     {% endif %}
-</div>
+        </div>
 
 
 {% endblock %}
