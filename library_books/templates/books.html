@@ -25,12 +25,12 @@
                     <p>{{ book.archived }}</p>
                 {% endif %}
                 {% if book.checkedOut %}
-                    <button class="check_btn button button-outline" name="check_in_out" type="submit">
-                        <i class="fas fa-book" onClick="{{ check_in_out}}"></i>
+                    <button class="check_btn button button-outline" method="post" type="submit" onClick="location.href='{% url 'check_out' %}'">
+                        <i class="fas fa-book"></i>
                     </button>
                 {% else %}
-                    <button class="check_btn button button-outline" name="check_in_out" type="submit">
-                        <i class="fas fa-book-open" onClick="{{ check_in_out }}"></i>
+                    <button class="check_btn button button-outline" method="post" type="submit" onClick="location.href='{% url 'check_out' %}'">
+                        <i class="fas fa-book-open"></i>
                     </button>
                 {% endif %}
             </div>
