@@ -53,8 +53,8 @@
                     </select>
                         
                 </form>
-                <form class="genreFilter column row" action="{% url 'filter' %}" method="get">
-                    <button class="reset_btn button button-outline" action="/books/" type="submit" name="gFilter">Reset</button>
+                <form class="genreFilter column row" action="{% url 'reset_view' %}" method="get">
+                    <button class="reset_btn button button-outline" type="submit" name="gFilter">Reset</button>
                 </form>
             </div>
         <hr>
