@@ -30,7 +30,7 @@ def fees_pay(request):
 
             if customer.paid:
                 messages.error(request, "Congratulations, you have successfully paid")
-                return redirect(reverse('card'))
+                return redirect(reverse('card.html'))
 
             else:
                 messages.error(request, "Unable to take payment at this time")

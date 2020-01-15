@@ -8,6 +8,7 @@
 {% block content %}
 
     {% if user.is_authenticated %}
+    <a class="fees-link" href={% url 'fees_pay'%}>Click to pay Fees</a>
         <div class="lib_container">
             {% for book in books %}
                 <div class="lib_card card">
