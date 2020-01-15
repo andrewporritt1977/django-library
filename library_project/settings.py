@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 import dj_database_url
-import env
+#import env
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -99,7 +99,7 @@ DATABASES = {
     }
 }
 """
-DATABASES = {'default' : dj_database_url.parse(os.environ.get('DATABASE_URL'))}
+DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))}
 
 
 # Password validation
