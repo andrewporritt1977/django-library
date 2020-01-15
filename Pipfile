@@ -8,6 +8,7 @@ verify_ssl = true
 [packages]
 django = "==3.0.2"
 gunicorn = "==19.9.0"
+dj_database_url = "==0.5.0"
 
 [requires]
 python_version = "3.8"
