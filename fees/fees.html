@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% load static from staticfiles %}
+{% load static %}
 {% block page_title %}Library Fees{% endblock %}
 {% block page_heading %}{{user}}'s Fees{% endblock %}
 
@@ -10,7 +10,7 @@
     Stripe.publishableKey = '{{ publishable }}';
     //]]>
 </script>
-<script type="text/javascript" src="{% static 'js/stripe.js' %}"></script>
+<script type="text/javascript" src="{% static 'stripe.js' %}"></script>
 {% endblock %}
 
 

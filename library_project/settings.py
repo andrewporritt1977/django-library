@@ -155,8 +155,9 @@ DEBUG = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    'library_app/static'
-
+    'library_app/static',
+'library_app/static/css',
+'library_app/static/js'
 ]
 
 STRIPE_PUBLISHABLE = os.getenv('STRIPE_PUBLISHABLE')
