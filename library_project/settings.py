@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+import env
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -157,3 +158,6 @@ STATICFILES_DIRS = [
     'library_app/static'
 
 ]
+
+STRIPE_PUBLISHABLE = os.getenv('STRIPE_PUBLISHABLE')
+STRIPE_SECRET = os.getenv('STRIPE_SECRET')

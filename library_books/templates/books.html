@@ -21,9 +21,6 @@
             {% if user.is_superuser %} 
                 <p>£{{ book.price}}</p>
             {% endif %}
-            {% if book.archived and is_superuser %}
-                <p>{{ book.archived }}</p>
-            {% endif %}
             {% if book.checkedOut %}
                 <a class="check_btn button button-outline" method="get" type="submit" href="{% url 'check_out' book.id %}">
                     <i class="fas fa-book"></i>
