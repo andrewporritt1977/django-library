@@ -13,7 +13,7 @@ stripe.api_key = settings.STRIPE_SECRET
 
 @login_required()
 def fees_pay(request):
-    if request.method=="POST":
+    if request.method == "POST":
         payment_form = MakePaymentForm(request.POST)
 
         if payment_form.is_valid():
@@ -40,4 +40,4 @@ def fees_pay(request):
     else:
         payment_form = MakePaymentForm()
 
-    return render(request, "card.html", {"payment_form" : payment_form, "publishable" : settings.STRIPE_PUBLISHABLE})
+    return render(request, "fees.html", {"payment_form" : payment_form, "publishable" : settings.STRIPE_PUBLISHABLE})

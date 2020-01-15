@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static from staticfiles %}
+{% block page_title %}Library Fees{% endblock %}
+{% block page_heading %}{{user}}'s Fees{% endblock %}
+
+{% block head_js %}
+<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+<script type="text/javascript">
+    //<![CDATA[
+    Stripe.publishableKey = '{{ publishable }}';
+    //]]>
+</script>
+<script type="text/javascript" src="{% static 'js/stripe.js' %}"></script>
+{% endblock %}
+
+
+{% block content %}
+<form role="form" method="post" id="payment-form" action="{% url fees_checkout %}">
+    <legend>Payment Details</legend>
+    <div id="credit-card-errors" style="display:none">
+        <div class="error" id="stripe-message-error"></div>
+    </div>
+
+    <div class="form payment-form">
+        {{ payment_form.as_p }}
+    </div>
+
+    {% csrf_token %}
+    <div>
+        <input class="btn" id="submit_payment_button" name="commit" type="submit" value="Submit Payment">
+    </div>
+</form>
+{% endblock %}

@@ -18,6 +18,7 @@ from django.urls import path, include
 from library_app import urls as library_urls
 from library_books import urls as book_urls
 from library_books.views import all_books
+from fees import urls as fees_urls
 from search import urls as urls_search
 
 urlpatterns = [
@@ -26,5 +27,5 @@ urlpatterns = [
     path('library/', include (library_urls)),
     path('search/', include (urls_search)),
     path('books/', include(book_urls)),
-
+    path('fees/', include(fees_urls))
 ]
