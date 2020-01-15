@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'library_app',
     'library_books',
-    'django_filters'
+    'fees'
 ]
 
 AUTHENTICATION_BACKENDS = ('django.contrib.auth.backends.ModelBackend',)
