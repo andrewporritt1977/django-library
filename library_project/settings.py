@@ -71,7 +71,8 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS':[os.path.join(os.path.dirname(__file__), 'templates'),
         '/Users/andrewporritt/python-django/library_books/templates',
-        '/Users/andrewporritt/python-django/library_app/templates/registration'
+        '/Users/andrewporritt/python-django/library_app/templates/registration',
+        '/Users/andrewporritt/python-django/payments/templates'
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -80,6 +81,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                
             ],
         },
     },
@@ -161,8 +163,8 @@ STATICFILES_DIRS = [
 
 ]
 
-STRIPE_PUBLISHABLE = os.getenv('STRIPE_PUBLISHABLE')
-STRIPE_SECRET = os.getenv('STRIPE_SECRET')
+STRIPE_PUBLISHABLE_KEY = os.getenv('STRIPE_PUBLISHABLE_KEY')
+STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY')
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')

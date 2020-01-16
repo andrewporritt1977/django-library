@@ -5,7 +5,15 @@
 
 
 
+
 {% block content %}
+<h2>Subscribe for only £4.99</h2>
+<script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+    data-key="{{ key }}"
+    data-description="Dajngo Library Subscription"
+    data-amount="499"
+    data-locale="auto">
+</script>
 
     {% if user.is_authenticated %}
         <div class="lib_container">

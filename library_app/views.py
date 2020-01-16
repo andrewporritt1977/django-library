@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, reverse
 from django.contrib import auth, messages
 from django.views.generic import TemplateView
+from django.conf import settings
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from library_books.models import Book
@@ -73,6 +74,11 @@ def user_card(request):
     user = request.user.username
     books = Book.objects.all().order_by("title").filter(checked_by__icontains=user)
     return render(request, 'card.html', {"books" : books})
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['key'] = settings.STRIPE_PUBLISHABLE_KEY
+        return context
 
 
 def password_reset_done(request):
