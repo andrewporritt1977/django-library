@@ -1,9 +1,6 @@
 /* General containers css */
 .container{
-    padding-top:2rem;
-    padding-left:3rem;
-    padding-right:3rem;
-    
+    padding:4%;
 } 
 
 .lib_container{
@@ -11,6 +8,7 @@
     flex-direction: row;
     align-content: space-around;
     flex-wrap: wrap;
+    margin : 0;
 }
 
 
@@ -24,7 +22,6 @@
     text-align: center;
     /*line-height: 3.8em;*/
     text-transform: uppercase;
-
     font-weight: 700;
     color: black;
     border : 0;
@@ -72,12 +69,18 @@
 
 /* library cards css */
 .lib_card{
-
+    padding : .4rem;
     background-color:#d0eeee;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
     white-space: nowrap;
     overflow: hidden;
+    height : 14rem;
+    box-sizing: border-box;
+}
+
+.book-wrapper{
+    padding: .2rem;
 }
 
 .lib_card:hover {
@@ -86,10 +89,15 @@
 }
 
 .checked{
+    padding : .4rem;
     background-color: #eed0d0;
     color : whitesmoke;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
+    white-space: nowrap;
+    overflow: hidden;
+    height : 14rem;
+    box-sizing: border-box;
 
 }
 
