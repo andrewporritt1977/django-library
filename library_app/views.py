@@ -1,7 +1,8 @@
+import stripe
+from django.conf import settings
 from django.shortcuts import render, redirect, reverse
 from django.contrib import auth, messages
 from django.views.generic import TemplateView
-from django.conf import settings
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from library_books.models import Book
@@ -80,6 +81,15 @@ def user_card(request):
         context['key'] = settings.STRIPE_PUBLISHABLE_KEY
         return context
 
+def pay(request): 
+    if request.method == 'POST':
+        pay = stripe.Charge.create(
+            amount=500,
+            currency='gbp',
+            description='Django Library Charge',
+            source=request.POST['stripeToken']
+        )
+        return render(request, 'pay.html')
 
 def password_reset_done(request):
     return(render(request, 'password_reset_done.html'))

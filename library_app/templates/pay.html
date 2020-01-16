@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block page_title %}Paid{% endblock %}
+{% block page_heading %}Paid{% endblock %}
+
+
+
+
+{% block content %}
+<h2>Thanks, you paid £4.99</h2>
+
+    {% if user.is_authenticated %}
+        <div class="lib_container">
+            {% for book in books %}
+                <div class="lib_card card">
+                    <p>{{ book.title}}</p>
+                    <p>{{ book.author}}</p>
+                    <p>{{ book.genre}}<p>
+                </div>
+            {% endfor %}
+    {% endif %}
+        </div>
+
+
+{% endblock %}

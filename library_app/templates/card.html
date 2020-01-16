@@ -8,13 +8,15 @@
 
 {% block content %}
 <h2>Subscribe for only £4.99</h2>
-<script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-    data-key="{{ key }}"
-    data-description="Dajngo Library Subscription"
-    data-amount="499"
-    data-locale="auto">
-</script>
-
+<form action="{% url 'pay' %}" method="post">
+{% csrf_token %}
+    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+        data-key="{{ key }}"
+        data-description="Dajngo Library Subscription"
+        data-amount="499"
+        data-locale="auto">
+    </script>
+</form>
     {% if user.is_authenticated %}
         <div class="lib_container">
             {% for book in books %}
