@@ -7,7 +7,7 @@
 {% block content %}
 
     {% if user.is_authenticated %}
-        <div class="container">
+        <div class="book_container container">
             <div class="columns">
             {% for book in books %}
             {% if book.checkedOut %}
