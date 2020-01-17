@@ -26,14 +26,14 @@
     color: black;
     border : 0;
     border-color: darkgrey;
-    margin : 0;
     border-width: 1px;
     border-style: solid;
     border-radius: .4em;
 }
 
 .search-filter{
-
+    margin : .2rem;
+    text-align: center;
     display : flex;
     flex-direction: row;
     align-content: space-between;
@@ -69,6 +69,7 @@
 
 /* library cards css */
 .lib_card{
+    margin: .5rem;
     padding : .4rem;
     background-color:#d0eeee;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -107,8 +108,8 @@
 }
 
 .check_btn {
+    width: 100%;
     margin: 0 auto;
-    position: absolute;
     text-align:center;
     border-style: none;
 }
