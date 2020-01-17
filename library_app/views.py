@@ -70,6 +70,8 @@ def signup(request):
     return render(request, 'signup.html', {
         "signup_form" : signup_form})
 
+stripe.api_key = 'sk_test_VqOrsEv3D4h8RGi7RmU1DmwW00m1BXvTET'
+
 def user_card(request):
     """ view user'slibrary card """
     user = request.user.username
