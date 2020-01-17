@@ -1,7 +1,7 @@
 import os
 
 os.environ.setdefault('SECRET_KEY', '*ylp@%6+lg@c+o#zmp3u#hyi^dug36vpg%xsc5_pw5hx0q7jpj')
-os.environ.setdefault('DEBUG', 'True')
+os.environ.setdefault('DEBUG', 'False')
 os.environ.setdefault('EMAIL_ADDRESS', 'django.library.app@gmail.com')
 os.environ.setdefault('EMAIL_PASSWORD', 'Barros99')
 os.environ.setdefault('STRIPE_PUBLISHABLE_KEY', 'pk_test_RDA0sZZHdByA9ZIU5vSnPzKb00mv3JHfPk')
