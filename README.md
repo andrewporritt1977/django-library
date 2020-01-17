@@ -23,6 +23,8 @@ Filter / Search     The filter / search functions allow a user to quickly define
 
 Library Card        At a glance, users can see all of their checked out books.
 
+Add Books           This functionality is hidded for all but the Librarian (superuser). 
+
 Stripe Integration  To offer users the ability to pay a membership subscription online. (This is not required in a real world                     application for the app. It was added to fulfil the requirements of the brief). 
 
 ### Features Left to Implement
@@ -49,6 +51,7 @@ The project was tested in multiple screen sizes. I implemnented Pytest to check 
 
 Deployed to Heroku using Gunicorn, Whitenoise, Postgres and dj-database-url. 
 In fairness, I had multiple issues with Heroku, most of which I had caused myself by not properly managing my Pipfile / Pipfile.lock. However I feel that I have learned a lot from this and would be more confident using Heroku in future. 
+The url for the delpoyment is https://warm-forest-68273.herokuapp.com/
 
 ## Credits
 
@@ -59,3 +62,5 @@ In fairness, I had multiple issues with Heroku, most of which I had caused mysel
 - I feel that I have to acknowledge the following tutorial - https://testdriven.io/blog/django-stripe-tutorial/
 It allowed me to implement Stripe as the method shown in the Code Institute tutorials did not work on my setup. 
 However, even following the advice offered, I found that Django could not access the Stripe secret/publishable keys via environmental variables. The issue did not occur in any of the other values in my .env file - so I am unsure if the problem was once again my system setup - or perhaps my inexperience in using stripe. 
+
+- Because of the amended implementation of Stripe. No JS was required for this applicaiton. 
