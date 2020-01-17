@@ -2,7 +2,8 @@
 
 
 .library_container{
-    padding:4%;
+    margin:2rem;
+    padding: .4rem;
 } 
 
 .book_container{
@@ -35,7 +36,7 @@
 }
 
 .search-filter{
-    margin : .2rem;
+    margin : .3rem;
     text-align: center;
     display : flex;
     flex-direction: row;
