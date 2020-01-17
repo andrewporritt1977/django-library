@@ -19,6 +19,9 @@
 
 
 .nav_section{
+    display: flex;
+    align-items : center;
+    justify-content: space-evenly;
     margin: .3rem;
     letter-spacing: .1em;
     text-align: center;
@@ -46,11 +49,17 @@
 
 }
 
+.search_input{
+    margin-left: 2rem;
+    margin-top: 4px;
+}
+
 .genreFilter{
     border-color: darkgrey;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    margin-top: .2rem;
 }
 
 .reset_btn{
@@ -107,11 +116,16 @@
 
 .hide-link{
     display : contents;
+
     background-color: inherit;
     display:hidden;
     width: 100%;
     border-style: hidden;
     outline: none;
+}
+
+.hide_link_wrapper{
+    display : block;
 }
 
 .check_btn {

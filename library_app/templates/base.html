@@ -28,21 +28,21 @@
         <Body class="library_container">
             <h1>{% block page_heading %}{% endblock %}</h1>
             <div class="seach-filter container columns">
-                <nav class="col-xs-10 col-4">
+                <nav class="col-xs-12 col-3">
                     <ul class="columns nav_section">
                         {% if user.is_authenticated %}
-                            <a class="col-xs-4 col-2" href="{% url 'logout' %}">Logout</a>  <a class="col-xs-4 col-2" href="{% url 'user_card'%}">Card</a>
+                            <a class="col-xs-6 col-6" href="{% url 'logout' %}">Logout</a>  <a class="col-xs-4 col-2" href="{% url 'user_card'%}">Card</a>
                         {% else %}
-                            <a class="col-xs-4 col-2" href="{% url 'login' %}">Login</a>  <a class="col-xs-4 col-2" href="{% url 'signup' %}">Sign Up</a>
+                            <a class="col-xs-6 col-6" href="{% url 'login' %}">Login</a>  <a class="col-xs-4 col-2" href="{% url 'signup' %}">Sign Up</a>
                         {% endif %}
                         
                     </ul>
                 </nav>    
                     <form class="searchform col-xs-10 col-3" action="{% url 'search' %}" method="get">
-                        <input type="text" class="search_input" placeholder="Search" name="bkSearch" onChange="form.submit();">
+                        <input type="text" class="search_input col-xs-12 col-10" placeholder="Search" name="bkSearch" onChange="form.submit();">
                     </form>
-                    <form class="genreFilter col-xs-10 col-3" action="{% url 'filter' %}" method="get">
-                        <select name="gFilter" onChange="form.submit();">
+                    <form class="genreFilter col-xs-12 col-3" action="{% url 'filter' %}" method="get">
+                        <select name="gFilter" onChange="form.submit();" class="col-xs-12 xol-3">
                             <option value="{{ Book }}" selected="selected">Genre Filter</option>
                             <option value="PD">PD</option>
                             <option value="PA">PA</option>
