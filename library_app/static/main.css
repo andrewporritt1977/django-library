@@ -69,13 +69,13 @@
 
 /* registration forms */
 
-/*    .signupform{
+.signupform{
+    max-width: 80%;
+}
 
-    }
-
-    .loginform{
-
-    } */
+.loginform{
+    max-width: 80%;
+} 
 
 
 /* library cards css */
