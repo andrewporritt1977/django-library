@@ -84,10 +84,6 @@
     box-sizing: border-box;
 }
 
-.book-wrapper{
-    padding: .2rem;
-}
-
 .lib_card:hover {
     background-color: #e6f6f6;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
@@ -109,6 +105,11 @@
 .checked:hover {
     background-color: #f6e6e6;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.hide-link{
+    border-style: hidden;
+    outline: none;
 }
 
 .check_btn {
