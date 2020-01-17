@@ -114,6 +114,14 @@
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
+.check_btn {
+    font-size: 1.7em;
+    width: 100%;
+    margin: 0 auto;
+    text-align:center;
+    border-style: none;
+}
+/* required to ensure whole book tile clickable for check-in / out without ugly anchor tag border */
 .hide-link{
     display : contents;
 
@@ -126,11 +134,7 @@
 
 .hide_link_wrapper{
     display : block;
+    height: 100%;
+    width: 100%;
 }
 
-.check_btn {
-    width: 100%;
-    margin: 0 auto;
-    text-align:center;
-    border-style: none;
-}
