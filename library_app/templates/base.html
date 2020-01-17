@@ -47,9 +47,13 @@
                             <option value="Other">Other</option>
                         </select>    
                     </form>
+                    {% if user.is_superuser %}
+                        <a class="add" href="{% url 'add_book' %}"><i class="fas fa-plus-circle add-icon"></i></a>
+                    {% endif %}
                     <form class="genreFilter column" action="{% url 'reset_view' %}" method="get">
                         <button class="reset_btn button button-outline" type="submit" name="gFilter">Home</button>
                     </form>
+
             </div>
         <hr>
         {% block content %}

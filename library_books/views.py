@@ -1,5 +1,6 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from .models import Book
+from .forms import AddBook
 
 # Create your views here.
 def all_books(request):
@@ -18,3 +19,16 @@ def check_out(request, pk):
         book.checked_by = ""
     book.save()
     return render(request, "books.html", {"books" : books})
+
+def add_book(request):
+    if request.method =="POST":
+        form = AddBook(request.POST)
+        if form.is_valid():
+            book = form.save(commit=False)
+            book.save()
+            return redirect('books')
+    
+    else:
+        form = AddBook()
+    return render(request, 'add_book.html', {'form' : form})
+
