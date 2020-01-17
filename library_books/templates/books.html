@@ -7,12 +7,13 @@
 {% block content %}
 
     {% if user.is_authenticated %}
-        <div class="lib_container">
+        <div class="book_container container">
+            <div class="columns">
             {% for book in books %}
             {% if book.checkedOut %}
-                <div class="lib_card checked">
+                <div class="lib_card checked col-xs-5 col-sm-5 col-md-3  col-lg-3 col-2">
             {% else %}
-                <div class="lib_card">
+                <div class="lib_card col-xs-5 col-sm-5 col-md-3 col-lg-3 col-2">
             {% endif %}
                 <p>{{ book.title}}</p>
                 <p>{{ book.author}}</p>
@@ -32,6 +33,7 @@
             {% endif %}
                 </div>
             {% endfor %}
+            </div>
     {% else %}
         <p>Please <a href="{% url 'login' %}">log in</a> to browse the Library</p>
     {% endif %}

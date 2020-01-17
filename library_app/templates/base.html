@@ -25,10 +25,10 @@
         <header>
 
         </header>
-        <Body class="container">
+        <Body class="library_container">
             <h1>{% block page_heading %}{% endblock %}</h1>
-            <div class="seach-filter columns">
-                <nav class="col-xs-12 col-4">
+            <div class="seach-filter container columns">
+                <nav class="col-xs-10 col-4">
                     <ul class="columns nav_section">
                         {% if user.is_authenticated %}
                             <a class="col-xs-4 col-2" href="{% url 'logout' %}">Logout</a>  <a class="col-xs-4 col-2" href="{% url 'user_card'%}">Card</a>
@@ -37,12 +37,11 @@
                         {% endif %}
                         
                     </ul>
-                </nav>
-                <div class="row">
-                    <form class="searchform columns 4 " action="{% url 'search' %}" method="get">
+                </nav>    
+                    <form class="searchform col-xs-10 col-3" action="{% url 'search' %}" method="get">
                         <input type="text" class="search_input" placeholder="Search" name="bkSearch" onChange="form.submit();">
                     </form>
-                    <form class="genreFilter columns 4 row" action="{% url 'filter' %}" method="get">
+                    <form class="genreFilter col-xs-10 col-3" action="{% url 'filter' %}" method="get">
                         <select name="gFilter" onChange="form.submit();">
                             <option value="{{ Book }}" selected="selected">Genre Filter</option>
                             <option value="PD">PD</option>
@@ -53,7 +52,6 @@
                     <form class="genreFilter column" action="{% url 'reset_view' %}" method="get">
                         <button class="reset_btn button button-outline" type="submit" name="gFilter">Home</button>
                     </form>
-                </div>
             </div>
         <hr>
         {% block content %}
