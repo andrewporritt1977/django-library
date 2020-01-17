@@ -108,6 +108,9 @@
 }
 
 .hide-link{
+    background-color: inherit;
+    display:hidden;
+    width: 100%;
     border-style: hidden;
     outline: none;
 }
