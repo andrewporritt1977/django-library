@@ -1,6 +1,4 @@
 /* General containers css */
-
-
 .library_container{
     margin:2rem;
     padding: .4rem;
@@ -108,6 +106,7 @@
 }
 
 .hide-link{
+    display : contents;
     background-color: inherit;
     display:hidden;
     width: 100%;
