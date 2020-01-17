@@ -23,7 +23,7 @@ Filter / Search     The filter / search functions allow a user to quickly define
 
 Library Card        At a glance, users can see all of their checked out books.
 
-Stripe Integration  To offer users the ability to pay fines / membership online. 
+Stripe Integration  To offer users the ability to pay a membership subscription online. (This is not required in a real world                     application for the app. It was added to fulfil the requirements of the brief). 
 
 ### Features Left to Implement
 
@@ -31,16 +31,31 @@ Past MVP, the library could evolve in a number of directions. I think what could
 
 ## Technologies Used
 
+In addiiton to Python / Django I used the following:
+
+Spectre.css - a very lightweigh and unobtrusive css frasmework. In hindsight, I would have perhaps worked quicker just utilizing 'vanilla' css / flexbox, but I enjoyed experimenting with a new framweork and grid paradigm. https://picturepan2.github.io/spectre/
+
+Whitenoise - a fantastic utility that streamlined the deployment process. It allowed me to host static files on Heroku, therefore circumventing the requirement for AWS (or similar) hosting. http://whitenoise.evans.io/en/stable/
+
+PostgreSQL - fantastic open source database. https://www.postgresql.org/
+
 
 ## Testing
+
+The project was tested in multiple screen sizes. I implemnented Pytest to check logic / functions within the app. 
 
 
 ## Deployment
 
-
+Deployed to Heroku using Gunicorn, Whitenoise, Postgres and dj-database-url. 
+In fairness, I had multiple issues with Heroku, most of which I had caused myself by not properly managing my Pipfile / Pipfile.lock. However I feel that I have learned a lot from this and would be more confident using Heroku in future. 
 
 ## Credits
 
 ### Acknowledgements
 
-- I received inspiration for this project from X
+- I received inspiration for this project from my current workplace (AND Digital). The ability to monitor a small works library is a current requirement, especially for workers based off site. Implementation of an app such as this could address the problems re management / access. 
+
+- I feel that I have to acknowledge the following tutorial - https://testdriven.io/blog/django-stripe-tutorial/
+It allowed me to implement Stripe as the method shown in the Code Institute tutorials did not work on my setup. 
+However, even following the advice offered, I found that Django could not access the Stripe secret/publishable keys via environmental variables. The issue did not occur in any of the other values in my .env file - so I am unsure if the problem was once again my system setup - or perhaps my inexperience in using stripe. 
