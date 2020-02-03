@@ -52,7 +52,14 @@ a:hover{
 }
 
 /* buttons and components */
-
+.check_btn {
+    color : white;
+    font-size: 1.7em;
+    width: 100%;
+    margin: 0 auto;
+    text-align:center;
+    border-style: none;
+}
 
 
 /* search filter forms */
@@ -136,8 +143,6 @@ a.nav_section{
 
 /* library cards css */
 .lib_card{
-    
-    
     margin: .5rem;
     padding : .4rem;
     background-color:#F9BA93;
@@ -149,6 +154,38 @@ a.nav_section{
     height : 260px;
     width : 160px;
     box-sizing: border-box;
+}
+/* large screens */
+@media only screen and (min-width: 768px) {
+    .lib_card{
+        margin: .5rem;
+        padding : .4rem;
+        height : 320px;
+        width : 300px;
+        box-sizing: border-box;
+    }
+}
+
+/* small mobile */
+@media only screen and (max-width: 380px) {
+    .lib_card{
+        margin: 0.1rem;
+        padding : .2rem;
+        height : 250px;
+        width : 150px;
+        box-sizing: border-box;
+    }
+}
+
+/* v small mobile */
+@media only screen and (max-width: 320px) {
+    .lib_card{
+        margin: 0.1rem;
+        padding : .2rem;
+        height : 250px;
+        width : 130px;
+        box-sizing: border-box;
+    }
 }
 
 .lib_card:hover {
@@ -170,19 +207,44 @@ a.nav_section{
     box-sizing: border-box;
 }
 
+@media only screen and (min-width: 768px) {
+    .lib_card{
+        margin: .5rem;
+        padding : .4rem;
+        height : 300px;
+        width : 250px;
+        box-sizing: border-box;
+    }
+}
+
+/* small mobile */
+@media only screen and (max-width: 380px) {
+    .lib_card{
+        margin: 0.1rem;
+        padding : .2rem;
+        height : 250px;
+        width : 150px;
+        box-sizing: border-box;
+    }
+}
+
+/* v small mobile */
+@media only screen and (max-width: 320px) {
+    .lib_card{
+        margin: 0.1rem;
+        padding : .2rem;
+        height : 250px;
+        width : 130px;
+        box-sizing: border-box;
+    }
+}
+
 .checked:hover {
     background-color:#59BAF6 ;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
-.check_btn {
-    color : white;
-    font-size: 1.7em;
-    width: 100%;
-    margin: 0 auto;
-    text-align:center;
-    border-style: none;
-}
+
 /* required to ensure whole book tile clickable for check-in / out without ugly anchor tag border */
 .hide-link{
     display : contents;
