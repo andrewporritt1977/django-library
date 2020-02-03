@@ -27,7 +27,6 @@ def add_book(request):
             book = form.save(commit=False)
             book.save()
             return redirect('books')
-    
     else:
         form = AddBook()
     return render(request, 'add_book.html', {'form' : form})
