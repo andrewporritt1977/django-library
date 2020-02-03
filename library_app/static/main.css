@@ -18,6 +18,21 @@ p{
     color : black;
 }
 
+/* links - to overwrite colour scheme imparted by Spectre CSS */
+a{
+    color : black ;
+    transition: 0.3s;
+}
+
+a:visited{
+    color : black;
+}
+
+a:hover{
+    color : #494848;
+    text-decoration: none;
+}
+
 /* General containers */
 .library_container{
     margin:2rem;
@@ -30,8 +45,11 @@ p{
     align-content: space-around;
     flex-wrap: wrap;
     margin : .2rem;
+    background-image: url('./svg/Rectangle.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
-
 
 /* buttons and components */
 
@@ -57,7 +75,12 @@ p{
     border-radius: .4em;
 }
 
+a.nav_section{
+    color : black;
+}
+
 .search-filter{
+    color : black;
     margin : .3rem;
     text-align: center;
     display : flex;
@@ -113,6 +136,8 @@ p{
 
 /* library cards css */
 .lib_card{
+    
+    
     margin: .5rem;
     padding : .4rem;
     background-color:#F9BA93;
