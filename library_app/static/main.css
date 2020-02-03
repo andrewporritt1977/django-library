@@ -1,4 +1,24 @@
-/* General containers css */
+/* Fonts */
+
+/* Main Font */
+@import url('https://fonts.googleapis.com/css?family=Fjalla+One&display=swap');
+
+h1, h2, h3, h4, h5, h6{
+    font-family: 'Fjalla One', sans-serif;
+}
+
+/* Body Font */ 
+@import url('https://fonts.googleapis.com/css?family=Fjalla+One&display=swap');
+
+p{
+    font-family: 'Noto Sans', sans-serif;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color : black;
+}
+
+/* General containers */
 .library_container{
     margin:2rem;
     padding: .4rem;
@@ -15,8 +35,9 @@
 
 /* buttons and components */
 
-/* search filter forms */
 
+
+/* search filter forms */
 
 .nav_section{
     display: flex;
@@ -66,6 +87,7 @@
     border-color: darkgrey;
     float : left;
 }
+
 /* add book icon */
 .add{
     position: fixed;
@@ -78,8 +100,8 @@
     font-size: 4rem;
 }
 
-/* registration forms */
 
+/* registration forms */
 .signupform{
     max-width: 80%;
 }
@@ -93,41 +115,43 @@
 .lib_card{
     margin: .5rem;
     padding : .4rem;
-    background-color:#d0eeee;
+    background-color:#F9BA93;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
-    white-space: nowrap;
     overflow: hidden;
-    height : 250px;
-    width : 150px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    height : 260px;
+    width : 160px;
     box-sizing: border-box;
 }
 
 .lib_card:hover {
-    background-color: #e6f6f6;
+    background-color:#F69559 ;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
 .checked{
     padding : .4rem;
-    background-color: #eed0d0;
+    background-color: #93D2F9;
     color : whitesmoke;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
-    white-space: nowrap;
     overflow: hidden;
-    height : 250px;
-    width : 150px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    height : 260px;
+    width : 160px;
     box-sizing: border-box;
-
 }
 
 .checked:hover {
-    background-color: #f6e6e6;
+    background-color:#59BAF6 ;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
 .check_btn {
+    color : white;
     font-size: 1.7em;
     width: 100%;
     margin: 0 auto;
