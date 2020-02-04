@@ -19,7 +19,6 @@
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        
         <header>
             <a href={% url 'books'%}><h1>{% block page_heading %}{% endblock %}</h1></a>
             <div class="seach-filter container columns">
@@ -49,11 +48,10 @@
                     {% endif %}
             </div>
         </header>
-        <Body class="library_container">
-
+        <section class="library_container">
         <hr>
         {% block content %}
         {% endblock %}
-        </Body>
+        </section>
     </body>
 </html>

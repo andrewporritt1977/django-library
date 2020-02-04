@@ -39,6 +39,13 @@ a:hover{
     padding: .4rem;
 } 
 
+@media only screen and (max-width: 464px) {
+    .library_container{
+        margin : 0;
+        padding : 0;
+    }
+}
+
 .book_container{
 
     display : flex;
