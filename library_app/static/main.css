@@ -40,17 +40,26 @@ a:hover{
 } 
 
 .book_container{
+
     display : flex;
     flex-direction: row;
     align-content: space-around;
     flex-wrap: wrap;
     margin : .2rem;
+    padding-left : 5rem;
+    padding-right : 5rem;
     background-image: url('./svg/Rectangle.svg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
+@media only screen and (max-width:1024px) {
+    .book_container{
+        padding-left : 0.2rem;
+        padding-right : 0.2rem;
+    }
+}
 /* buttons and components */
 .check_btn {
     color : white;
@@ -63,14 +72,29 @@ a:hover{
 
 
 /* search filter forms */
+nav{
+    padding-left: 10%;
+    padding-right: 10%;
+    width : 100%;
+    text-align: center;
+}
+
+.search-filter{
+
+    color : black;
+    margin : .3rem;
+    text-align: center;
+    display : flex;
+    flex-direction: row;
+    align-content: space-between;
+    flex-wrap: wrap;
+}
 
 .nav_section{
     display: flex;
-    align-items : center;
     justify-content: space-evenly;
     margin: .3rem;
     letter-spacing: .1em;
-    text-align: center;
     /*line-height: 3.8em;*/
     text-transform: uppercase;
     font-weight: 700;
@@ -86,15 +110,7 @@ a.nav_section{
     color : black;
 }
 
-.search-filter{
-    color : black;
-    margin : .3rem;
-    text-align: center;
-    display : flex;
-    flex-direction: row;
-    align-content: space-between;
-    flex-wrap: wrap;
-}
+
 .searchform{
     border-color: darkgrey;
 
@@ -111,11 +127,6 @@ a.nav_section{
     flex-direction: row;
     flex-wrap: wrap;
     margin-top: .2rem;
-}
-
-.reset_btn{
-    border-color: darkgrey;
-    float : left;
 }
 
 /* add book icon */
@@ -145,7 +156,7 @@ a.nav_section{
 .lib_card{
     margin: .5rem;
     padding : .4rem;
-    background-color:#F9BA93;
+    background-color:#93D2F9;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
     overflow: hidden;
@@ -189,13 +200,13 @@ a.nav_section{
 }
 
 .lib_card:hover {
-    background-color:#F69559 ;
+    background-color:#59BAF6  ;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
 .checked{
     padding : .4rem;
-    background-color: #93D2F9;
+    background-color: #F9BA93;
     color : whitesmoke;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
@@ -240,7 +251,7 @@ a.nav_section{
 }
 
 .checked:hover {
-    background-color:#59BAF6 ;
+    background-color:#F69559
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 

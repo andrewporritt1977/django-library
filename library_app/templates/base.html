@@ -23,17 +23,14 @@
         <header>
             <a href={% url 'books'%}><h1>{% block page_heading %}{% endblock %}</h1></a>
             <div class="seach-filter container columns">
-                <nav class="col-xs-12 col-3">
+                <nav class="col-xs-12 col-10">
                     <ul class="columns nav_section">
                         {% if user.is_authenticated %}
                             <a class="col-xs-6 col-6" href="{% url 'logout' %}">Logout</a>  <a class="col-xs-4 col-2" href="{% url 'user_card'%}">Card</a>
                         {% else %}
                             <a class="col-xs-6 col-6" href="{% url 'login' %}">Login</a>  <a class="col-xs-4 col-2" href="{% url 'signup' %}">Join</a>
                         {% endif %}
-                        
-                    </ul>
-                </nav>    
-                    <form class="searchform col-xs-10 col-3" action="{% url 'search' %}" method="get">
+                        <form class="searchform col-xs-10 col-3" action="{% url 'search' %}" method="get">
                         <input type="text" class="search_input col-xs-12 col-10" placeholder="Search" name="bkSearch" onChange="form.submit();">
                     </form>
                     <form class="genreFilter col-xs-12 col-3" action="{% url 'filter' %}" method="get">
@@ -44,13 +41,12 @@
                             <option value="Other">Other</option>
                         </select>    
                     </form>
+                    </ul>
+                </nav>    
+                    
                     {% if user.is_superuser %}
                         <a class="add" href="{% url 'add_book' %}"><i class="fas fa-plus-circle add-icon"></i></a>
                     {% endif %}
-                    <form class="genreFilter column" action="{% url 'reset_view' %}" method="get">
-                        <button class="reset_btn button button-outline" type="submit" name="gFilter">Home</button>
-                    </form>
-
             </div>
         </header>
         <Body class="library_container">
