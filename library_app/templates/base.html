@@ -14,6 +14,7 @@
         <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
         <link rel="stylesheet" href="{% static 'main.css'%}">
+        <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
     </head>
     <body class="container">
         <!--[if lt IE 7]>
@@ -21,8 +22,34 @@
         <![endif]-->
         <header>
             <a href={% url 'books'%}><h1>{% block page_heading %}{% endblock %}</h1></a>
-            <div class="seach-filter container columns">
-                <nav class="col-xs-12 col-10">
+                    
+            {% if user.is_superuser %}
+                <a class="add" href="{% url 'add_book' %}"><i class="fas fa-plus-circle add-icon"></i></a>
+            {% endif %}
+        </header>
+        <section class="library_container">
+        <hr>
+        {% block content %}
+        {% endblock %}
+            <div id="popNav" class="navBox">
+
+                <a href="javascript:void(0)" class="navClose" onclick="navDown()">X</a>
+
+                <!-- nav links -->
+
+                <div id="navLink" class="nav-links">
+                    <a href="{% url 'books' %}" class="pop-link">Home</a>
+                        <br>
+                    <a href="{% url 'login' %}" class="pop-link">Login</a>
+                        <br>
+                    <a href="{% url 'logout' %}" class="pop-link">Logout</a>
+                        <br>
+                    <a href="{% url 'signup' %}" class="pop-link">Join</a>
+                        <br>
+                    <a href="{% url 'user_card'%}" class="pop-link">Card</a>
+                        <br>
+                </div>
+                <!-- <nav class="col-xs-12 col-10">
                     <ul class="columns nav_section">
                         {% if user.is_authenticated %}
                             <a class="col-xs-6 col-6" href="{% url 'logout' %}">Logout</a>  <a class="col-xs-4 col-2" href="{% url 'user_card'%}">Card</a>
@@ -41,17 +68,12 @@
                         </select>    
                     </form>
                     </ul>
-                </nav>    
-                    
-                    {% if user.is_superuser %}
-                        <a class="add" href="{% url 'add_book' %}"><i class="fas fa-plus-circle add-icon"></i></a>
-                    {% endif %}
+                </nav>    -->
             </div>
-        </header>
-        <section class="library_container">
-        <hr>
-        {% block content %}
-        {% endblock %}
         </section>
+        <footer>
+            <a href="javascript:void(0)" class="navOpen" onclick="navUp()"><i class="fas fa-bars nav-icon"></i></a>
+        </footer>
+
     </body>
 </html>
