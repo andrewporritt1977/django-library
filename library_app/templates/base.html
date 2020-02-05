@@ -26,14 +26,14 @@
             {% if user.is_superuser %}
                 <a class="add" href="{% url 'add_book' %}"><i class="fas fa-plus-circle add-icon"></i></a>
             {% endif %}
+
+            <a href="javascript:void(0)" class="navOpen" onclick="navUp()"><i class="fas fa-bars nav-icon"></i></a>
         </header>
         <section class="library_container">
         <hr>
         {% block content %}
         {% endblock %}
             <div id="popNav" class="navBox">
-
-                <a href="javascript:void(0)" class="navClose" onclick="navDown()">X</a>
 
                 <!-- nav links -->
 
@@ -72,6 +72,10 @@
             </div>
         </section>
         <footer>
+            {% if user.is_superuser %}
+                <a class="add" href="{% url 'add_book' %}"><i class="fas fa-plus-circle add-icon"></i></a>
+            {% endif %}
+
             <a href="javascript:void(0)" class="navOpen" onclick="navUp()"><i class="fas fa-bars nav-icon"></i></a>
         </footer>
 

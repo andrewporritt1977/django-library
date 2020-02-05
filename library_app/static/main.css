@@ -69,6 +69,7 @@ a:hover{
 
 /* footer css */
 footer{
+    z-index: 1;
     position : fixed;
     bottom : 0;
     left : 0;
@@ -105,7 +106,7 @@ footer{
     text-align: center;
     transition :1s;
 }
-
+/* links + link text */
 .pop-link{
     color : lightgrey;
     font-size: 2.5em;
@@ -125,11 +126,16 @@ footer{
 
 /* nav bar icon */
 .nav-icon{
+    z-index: 2;
     color : black;
     font-size: 4rem;
     position: fixed;
     right : 75%;
     top : 85%;
+}
+
+a.navOpen{
+    z-index: 2;
 }
 
 /* search filter forms 
