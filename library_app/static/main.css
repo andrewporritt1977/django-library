@@ -34,8 +34,37 @@ a:hover{
 }
 
 /* General containers */
+
+/* Header */
+.banner-wrap{
+    background-image: url('./img/rendered.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height : 20vh;
+    padding-left: 25%;
+    padding-right : 25%;
+}
+
+.title{
+    font-size: 4em;
+    color:black;
+    /* white shadow outline for Title / icons */
+    text-shadow: -2px -2px 0 #FFF, 2px -2px 0 #FFF, -2px 2px 0 #FFF, 2px 2px 0 #FFF;
+}
+
+/*.searchbox{
+
+}*/
+
+.stuck{
+    position: fixed;
+    top: 0;
+    width: 100%
+}
+
 .library_container{
-    margin:2rem;
+    margin: 0rem 2rem 0rem 2rem;
     padding: .4rem;
 } 
 
@@ -54,10 +83,6 @@ a:hover{
     margin : .2rem;
     padding-left : 5rem;
     padding-right : 5rem;
-    background-image: url('./svg/Rectangle.svg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
 }
 
 @media only screen and (max-width:1024px) {
@@ -66,6 +91,7 @@ a:hover{
         padding-right : 0.2rem;
     }
 }
+
 
 /* footer css */
 footer{
@@ -100,9 +126,10 @@ footer{
 }
 
 .nav-links{
+    color : lightgrey;
     height : 100%;
     position: relative;
-    width: 0%;
+    width: 100%;
     text-align: center;
     transition :1s;
 }
@@ -124,6 +151,13 @@ footer{
     color : white;
 }
 
+.pop-link-faded{
+    color : black;
+    font-size: 2.5em;
+    transition : .3s;
+    margin : .5rem;
+}
+
 /* nav bar icon */
 .nav-icon{
     z-index: 2;
@@ -132,6 +166,7 @@ footer{
     position: fixed;
     right : 75%;
     top : 85%;
+    text-shadow: -1px -1px 0 #FFF, 1px -1px 0 #FFF, -1px 1px 0 #FFF, 1px 1px 0 #FFF;
 }
 
 a.navOpen{
@@ -206,6 +241,7 @@ a.nav_section{
 .add-icon{
     color : black;
     font-size: 4rem;
+    text-shadow: -1px -1px 0 #FFF, 1px -1px 0 #FFF, -1px 1px 0 #FFF, 1px 1px 0 #FFF;
 }
 
 

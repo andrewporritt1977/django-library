@@ -21,13 +21,28 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         <header>
-            <a href={% url 'books'%}><h1>{% block page_heading %}{% endblock %}</h1></a>
-                    
-            {% if user.is_superuser %}
-                <a class="add" href="{% url 'add_book' %}"><i class="fas fa-plus-circle add-icon"></i></a>
-            {% endif %}
+            <div class="banner-wrap">
+                <a href={% url 'books'%}><h1 class="title">{% block page_heading %}{% endblock %}</h1></a>
+                        
+                {% if user.is_superuser %}
+                    <a class="add" href="{% url 'add_book' %}"><i class="fas fa-plus-circle add-icon"></i></a>
+                {% endif %}
 
-            <a href="javascript:void(0)" class="navOpen" onclick="navUp()"><i class="fas fa-bars nav-icon"></i></a>
+                <a href="javascript:void(0)" class="navOpen" onclick="navUp()"><i class="fas fa-bars nav-icon"></i></a>
+            </div>
+            <div class="searchbox" id="stickyBar">
+                <form class="searchform col-xs-10 col-3" action="{% url 'search' %}" method="get">
+                    <input type="text" class="search_input col-xs-12 col-10" placeholder="Search" name="bkSearch" onChange="form.submit();">
+                </form>
+                <form class="genreFilter col-xs-12 col-3" action="{% url 'filter' %}" method="get">
+                    <select name="gFilter" onChange="form.submit();" class="col-xs-12 xol-3">
+                        <option value="{{ Book }}" selected="selected">Genre Filter</option>
+                        <option value="PD">PD</option>
+                        <option value="PA">PA</option>
+                        <option value="Other">Other</option>
+                    </select>    
+                </form>
+            </div>
         </header>
         <section class="library_container">
         <hr>
@@ -38,16 +53,29 @@
                 <!-- nav links -->
 
                 <div id="navLink" class="nav-links">
-                    <a href="{% url 'books' %}" class="pop-link">Home</a>
-                        <br>
-                    <a href="{% url 'login' %}" class="pop-link">Login</a>
-                        <br>
-                    <a href="{% url 'logout' %}" class="pop-link">Logout</a>
-                        <br>
-                    <a href="{% url 'signup' %}" class="pop-link">Join</a>
-                        <br>
-                    <a href="{% url 'user_card'%}" class="pop-link">Card</a>
-                        <br>
+                    {% if user.is_authenticated %}
+                        <a href="{% url 'books' %}" class="pop-link">Home</a>
+                            <br>
+                        <a href="#" class="pop-link-faded">Login</a>
+                            <br>
+                        <a href="{% url 'logout' %}" class="pop-link">Logout</a>
+                            <br>
+                        <a href="#" class="pop-link-faded">Join</a>
+                            <br>
+                        <a href="{% url 'user_card'%}" class="pop-link">Card</a>
+                            <br>
+                    {% else %}
+                        <a href="#" class="pop-link-faded">Home</a>
+                            <br>
+                        <a href="{% url 'login' %}" class="pop-link">Login</a>
+                            <br>
+                        <a href="#" class="pop-link-faded">Logout</a>
+                            <br>
+                        <a href="{% url 'signup' %}" class="pop-link">Join</a>
+                            <br>
+                        <a href="#" class="pop-link-faded">Card</a>
+                            <br>
+                    {% endif %}
                 </div>
                 <!-- <nav class="col-xs-12 col-10">
                     <ul class="columns nav_section">
