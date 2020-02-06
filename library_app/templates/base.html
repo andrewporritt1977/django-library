@@ -31,11 +31,11 @@
                 <a href="javascript:void(0)" class="navOpen" onclick="navUp()"><i class="fas fa-bars nav-icon"></i></a>
             </div>
             <div class="searchbox" id="stickyBar">
-                <form class="searchform col-xs-10 col-3" action="{% url 'search' %}" method="get">
-                    <input type="text" class="search_input col-xs-12 col-10" placeholder="Search" name="bkSearch" onChange="form.submit();">
+                <form class="searchform" action="{% url 'search' %}" method="get">
+                    <input type="text" class="search_input" placeholder="Search" name="bkSearch" onChange="form.submit();">
                 </form>
-                <form class="genreFilter col-xs-12 col-3" action="{% url 'filter' %}" method="get">
-                    <select name="gFilter" onChange="form.submit();" class="col-xs-12 xol-3">
+                <form class="genreFilter" action="{% url 'filter' %}" method="get">
+                    <select name="gFilter" onChange="form.submit();" class="genreFilterSelect">
                         <option value="{{ Book }}" selected="selected">Genre Filter</option>
                         <option value="PD">PD</option>
                         <option value="PA">PA</option>
