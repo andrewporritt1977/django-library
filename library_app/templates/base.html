@@ -77,31 +77,11 @@
                             <br>
                     {% endif %}
                 </div>
-                <!-- <nav class="col-xs-12 col-10">
-                    <ul class="columns nav_section">
-                        {% if user.is_authenticated %}
-                            <a class="col-xs-6 col-6" href="{% url 'logout' %}">Logout</a>  <a class="col-xs-4 col-2" href="{% url 'user_card'%}">Card</a>
-                        {% else %}
-                            <a class="col-xs-6 col-6" href="{% url 'login' %}">Login</a>  <a class="col-xs-4 col-2" href="{% url 'signup' %}">Join</a>
-                        {% endif %}
-                        <form class="searchform col-xs-10 col-3" action="{% url 'search' %}" method="get">
-                        <input type="text" class="search_input col-xs-12 col-10" placeholder="Search" name="bkSearch" onChange="form.submit();">
-                    </form>
-                    <form class="genreFilter col-xs-12 col-3" action="{% url 'filter' %}" method="get">
-                        <select name="gFilter" onChange="form.submit();" class="col-xs-12 xol-3">
-                            <option value="{{ Book }}" selected="selected">Genre Filter</option>
-                            <option value="PD">PD</option>
-                            <option value="PA">PA</option>
-                            <option value="Other">Other</option>
-                        </select>    
-                    </form>
-                    </ul>
-                </nav>    -->
             </div>
         </section>
         <footer>
             {% if user.is_superuser %}
-                <a class="add" href="{% url 'add_book' %}"><i class="fas fa-plus-circle add-icon"></i></a>
+                <a class="add" href="{% url 'add_book' %}" ><i  class="fas fa-plus-circle add-icon"></i></a>
             {% endif %}
 
             <a href="javascript:void(0)" class="navOpen" onclick="navUp()"><i class="fas fa-bars nav-icon"></i></a>

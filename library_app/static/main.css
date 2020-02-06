@@ -53,15 +53,11 @@ a:hover{
     text-shadow: -2px -2px 0 #FFF, 2px -2px 0 #FFF, -2px 2px 0 #FFF, 2px 2px 0 #FFF;
 }
 
-/*.searchbox{
-
-}*/
-
-.stuck{
-    position: fixed;
-    top: 0;
-    width: 100%
+.searchbox{
+    width : 100%;
+    text-align: center;
 }
+
 
 .library_container{
     margin: 0rem 2rem 0rem 2rem;
@@ -158,6 +154,12 @@ footer{
     margin : .5rem;
 }
 
+@media only screen and (max-height:700px) {
+    .pop-link-faded{
+        font-size : 1.8em;
+    }
+}
+
 /* nav bar icon */
 .nav-icon{
     z-index: 2;
@@ -172,64 +174,6 @@ footer{
 a.navOpen{
     z-index: 2;
 }
-
-/* search filter forms 
-nav{
-    padding-left: 10%;
-    padding-right: 10%;
-    width : 100%;
-    text-align: center;
-}
-
-.search-filter{
-
-    color : black;
-    margin : .3rem;
-    text-align: center;
-    display : flex;
-    flex-direction: row;
-    align-content: space-between;
-    flex-wrap: wrap;
-}
-
-.nav_section{
-    display: flex;
-    justify-content: space-evenly;
-    margin: .3rem;
-    letter-spacing: .1em;
-    text-transform: uppercase;
-    font-weight: 700;
-    color: black;
-    border : 0;
-    border-color: darkgrey;
-    border-width: 1px;
-    border-style: solid;
-    border-radius: .4em;
-}
-
-a.nav_section{
-    color : black;
-}
-
-
-.searchform{
-    border-color: darkgrey;
-
-}
-
-.search_input{
-    margin-left: 2rem;
-    margin-top: 4px;
-}
-
-.genreFilter{
-    border-color: darkgrey;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin-top: .2rem;
-}
-*/
 
 /* add book icon */
 .add{
@@ -376,3 +320,26 @@ a.nav_section{
     width: 100%;
 }
 
+/* add book form */
+.add_book{
+    text-align: center;
+    padding-top : 5%;
+
+}
+
+.add_book_container{
+    margin : 5% 20% 5% 20%;
+    padding : 3%;
+    border-width: 1px;
+    border-radius: 5;
+    border-style: solid;
+    border-color: black;
+}
+
+@media only screen and (max-width : 600px){
+    .add_book_container{
+        margin : 0;
+        padding : 0;
+        border-width: 0;
+    }
+}

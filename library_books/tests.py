@@ -1,12 +1,7 @@
-from django.test import TestCase
+import pytest
 from .models import Book
+from .views import check_out
 # Create your tests here.
 
-class BookTests(TestCase):
-
-    def test_str(self):
-        test_name = Book(title="A Book")
-        self. assertEqual(str(test_name), 'A Book')
-
-    def function_test(self):
-        
+# def check_in_test():
+#   assert
