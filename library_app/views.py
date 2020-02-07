@@ -83,7 +83,7 @@ def user_card(request):
         context['key'] = settings.STRIPE_PUBLISHABLE_KEY
         return context
 
-def pay(request): 
+def pay(request):
     if request.method == 'POST':
         pay = stripe.Charge.create(
             amount=500,

@@ -15,17 +15,17 @@ p{
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    color : black;
+
 }
 
 /* links - to overwrite colour scheme imparted by Spectre CSS */
 a{
     color : black ;
-    transition: 0.3s;
+    transition: 0.3s; 
 }
 
 a:visited{
-    color : black;
+   color : black; 
 }
 
 a:hover{
@@ -112,6 +112,7 @@ footer{
 /* pop up nav bar */
 .navBox{
     background-color: rgba(0,0,0,0.6);
+    color : #dbdbdb;
     height :0%;
     width : 100%;
     position : fixed;
@@ -122,7 +123,7 @@ footer{
 }
 
 .nav-links{
-    color : lightgrey;
+    color : #dbdbdb;
     height : 100%;
     position: relative;
     width: 100%;
@@ -130,11 +131,15 @@ footer{
     transition :1s;
 }
 /* links + link text */
-.pop-link{
-    color : lightgrey;
+a.pop-link{
+    color : #dbdbdb;
     font-size: 2.5em;
     transition : .3s;
     margin : .5rem;
+}
+
+a.pop-link:visited{
+    color : #e6e6e6;
 }
 
 @media only screen and (max-height:700px) {
@@ -143,15 +148,19 @@ footer{
     }
 }
 
-.pop-link:hover{
+a.pop-link:hover{
     color : white;
 }
 
-.pop-link-faded{
-    color : black;
+a.pop-link-faded{
+    color : #9e9e9e;
     font-size: 2.5em;
     transition : .3s;
     margin : .5rem;
+}
+
+a.pop-link-faded:visited{
+    color : #9e9e9e;
 }
 
 @media only screen and (max-height:700px) {
@@ -331,7 +340,7 @@ a.navOpen{
     margin : 5% 20% 5% 20%;
     padding : 3%;
     border-width: 1px;
-    border-radius: 5;
+    border-radius: 5px;
     border-style: solid;
     border-color: black;
 }
