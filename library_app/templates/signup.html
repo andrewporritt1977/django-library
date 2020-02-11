@@ -12,11 +12,13 @@
             {% endfor %}
         </div>
     {% endif %}
-    <form method="POST" class="signupform">  
-        {% csrf_token %} 
-        {{ signup_form.as_p }}
-        <button type='submit' class='btn btn-primary' value='Submit'>Signup</button>
-    </form> 
-    <p>If you already have an account, you can <a href="{% url 'login' %}"><em>sign in </em></a></p>
+    <div class="signupform">
+        <form method="POST" class="signup">  
+            {% csrf_token %} 
+            {{ signup_form.as_p }}
+            <button type='submit' class='btn btn-primary' value='Submit'>Signup</button>
+        </form> 
+        <p>If you already have an account, you can <a href="{% url 'login' %}"><em>sign in </em></a></p>
+    </div>
 </body>
 {% endblock %}

@@ -199,9 +199,27 @@ a.navOpen{
 
 
 /* registration forms */
-.signupform{
-    max-width: 80%;
+.signup{
+    text-align: center;
 }
+
+.signupform{
+    margin : 5% 20% 5% 20%;
+    padding : 3%;
+    border-width: 1px;
+    border-radius: 5px;
+    border-style: solid;
+    border-color: black;
+}
+
+@media only screen and (max-width : 600px){
+    .signupform{
+        margin : 0;
+        padding : 0;
+        border-width: 0;
+    }
+}
+
 
 .loginform{
     max-width: 80%;
