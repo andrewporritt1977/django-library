@@ -12,7 +12,7 @@ h1, h2, h3, h4, h5, h6{
 
 p{
     font-family: 'Noto Sans', sans-serif;
-    overflow: hidden;
+    overflow: hidden; 
     white-space: nowrap;
     text-overflow: ellipsis;
 
@@ -53,12 +53,8 @@ a:hover{
     text-shadow: -2px -2px 0 #FFF, 2px -2px 0 #FFF, -2px 2px 0 #FFF, 2px 2px 0 #FFF;
 }
 
-.searchbox{
-    width : 100%;
-    text-align: center;
-}
 
-
+/* BODY */
 .library_container{
     margin: 0rem 2rem 0rem 2rem;
     padding: .4rem;
@@ -183,6 +179,46 @@ a.pop-link-faded:visited{
 a.navOpen{
     z-index: 2;
 }
+/* search / filter */
+
+.searchbox{
+    background-color: rgba(0,0,0,0.6);
+    color : #dbdbdb;
+    height :0%;
+    width : 100%;
+    position : fixed;
+    z-index: 1;
+    right : 0;
+    bottom : 0;
+    transition : 0.8s;
+}
+
+.searchform{
+
+}
+
+.genreFilter{
+    
+}
+
+.search{
+    position: fixed;
+    left : 47%;
+    top : 85%;
+    transition : 0.8s;
+}
+
+.search-icon{
+    color : black;
+    font-size: 4rem;
+    text-shadow: -1px -1px 0 #FFF, 1px -1px 0 #FFF, -1px 1px 0 #FFF, 1px 1px 0 #FFF;
+}
+
+.search-icon:visited{
+    color : black;
+    text-decoration: none;
+}
+
 
 /* add book icon */
 .add{

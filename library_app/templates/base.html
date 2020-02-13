@@ -30,7 +30,7 @@
 
                 <a href="javascript:void(0)" class="navOpen" onclick="navUp()"><i class="fas fa-bars nav-icon"></i></a>
             </div>
-            <div class="searchbox" id="stickyBar">
+            <div class="searchbox" id="popSearch">
                 <form class="searchform" action="{% url 'search' %}" method="get">
                     <input type="text" class="search_input" placeholder="Search" name="bkSearch" onChange="form.submit();">
                 </form>
@@ -85,6 +85,7 @@
             {% endif %}
 
             <a href="javascript:void(0)" class="navOpen" onclick="navUp()"><i class="fas fa-bars nav-icon"></i></a>
+            <a href="javascript:void(0)" class="search" onclick="searchUp()"><i id="searchicon" class="fas fa-search-plus search-icon"></i></a>
         </footer>
 
     </body>
