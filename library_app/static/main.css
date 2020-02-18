@@ -95,7 +95,7 @@ footer{
 
 }
 
-/* buttons and components */
+/* check out buttons and components */
 .check_btn {
     color : white;
     font-size: 1.7em;
@@ -103,6 +103,10 @@ footer{
     margin: 0 auto;
     text-align:center;
     border-style: none;
+}
+
+.not-user-book {
+    color : red ;
 }
 
 /* pop up nav bar */

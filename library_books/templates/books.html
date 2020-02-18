@@ -10,9 +10,11 @@
         <div class="book_container container">
             <div class="columns">
             {% for book in books %}
-            {% if book.checkedOut %}
+            {% if book.checkedOut and book.checked_by == user.username %}
                 <div class="lib_card checked col-xs-5 col-sm-5 col-md-3  col-lg-3 col-2">
                     <a class="hide-link" method="get" type="submit" href="{% url 'check_out' book.id %}">
+            {% elif book.checkedOut %}
+                <div class="lib_card checked col-xs-5 col-sm-5 col-md-3  col-lg-3 col-2">
             {% else %}
                 <div class="lib_card col-xs-5 col-sm-5 col-md-3 col-lg-3 col-2">
                     <a class="hide-link" method="get" type="submit" href="{% url 'check_out' book.id %}">
@@ -25,9 +27,13 @@
             {% if user.is_superuser %} 
                 <p>£{{ book.price}}</p>
             {% endif %}
-            {% if book.checkedOut %}
+            {% if book.checkedOut and book.checked_by == user.username %}
 
                     <i class="fas fa-book check_btn"></i>
+
+            {% elif book.checkedOut %}
+
+                    <i class="fas fa-book check_btn not-user-book"></i>
 
             {% else %}
 
