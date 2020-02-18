@@ -10,8 +10,8 @@ The inspiration for this was based on an existing need in the office of my curre
 The main guiding principles for the UX of this project was for the library to be approachable and intuitive. 
 I felt it important to draw a clear delineation between Borrowers and Librarians, and used the app authentication to offer different features for each type of user. An example user story for each is offered below:
 
-*As a Borrower, when I am logged into the Library, I want to be able to view a list of the books. 
-*As a Librarian, when I am logged into the library, I want to see the cost of books, and do not want other borrowers to acces this information. 
+* As a Borrower, when I am logged into the Library, I want to be able to view a list of the books. 
+* As a Librarian, when I am logged into the library, I want to see the cost of books, and do not want other borrowers to acces this information. 
 
 For navigation, I felt that access to the "book" view would be of paramount interest. Becaus of this I opted to have a pop-in nave menu - therefore allowing the user the full screen for viewing books. The Nav menu is accessible via clicking on an easily recognisable "burger" icon. I fixed the options available in the menu, but had the unavailable /or irrellevant options greyed out - dependent on the user's situation. 
 
