@@ -28,9 +28,7 @@ function searchUp() {
     if (searchState.style.height == "0%" || searchState.style.height == "") {
         searchState.style.height = "45%";
         navState.style.height = "0%";
-        hideNavIcon.style.display = "none";
     } else {
         searchState.style.height = "0%";
-        hideNavIcon.style.display = "none";
     }
 }
