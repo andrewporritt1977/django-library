@@ -194,11 +194,40 @@ a.navOpen{
 }
 
 .searchform{
+    text-align: center;
+    position: relative;
+    top: 25%;
+}
 
+.search_input{
+    width : 30%;
+    font-size: 1.2em;
+}
+
+@media only screen and (max-width: 464px) {
+    .search_input{
+        width : 70%;
+        font-size : 0.8em;
+    }
 }
 
 .genreFilter{
-    
+    text-align: center;
+    position: relative;
+    top: 40%;
+}
+
+.genreFilterSelect{
+    width : 30%;
+    background-color:white;
+    font-size: 1.2em;
+}
+
+@media only screen and (max-width: 464px) {
+    .genreFiterSelect{
+        width : 80%;
+        font-size : 0.8em;
+    }
 }
 
 .search{
@@ -206,6 +235,12 @@ a.navOpen{
     left : 47%;
     top : 85%;
     transition : 0.8s;
+}
+
+@media only screen and (max-width: 464px) {
+    .search{
+        left : 40%;
+    }
 }
 
 .search-icon{
