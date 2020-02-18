@@ -15,15 +15,17 @@ As a Librarian, when I am logged into the library, I want to see the cost of boo
 
 For navigation, I felt that access to the "book" view would be of paramount interest. Becaus of this I opted to have a pop-in nave menu - therefore allowing the user the full screen for viewing books. The Nav menu is accessible via clicking on an easily recognisable "burger" icon. I fixed the options available in the menu, but had the unavailable /or irrellevant options greyed out - dependent on the user's situation. 
 
+For Search / Filter I used the universal magnifying glass icon. I ekected to use a version with a plus inside of it therefore offering the user a clue that the icon would reveal a menu. In order to ensure that these icons would be compatible with smaller screens, I had the Search/Filter icon hide on opening of the nav menu. I also ensured that the nav menu was clickable even when the filter menu was open, and that all transitions between the states remained smooth. 
+
 ## Design
 
-As noted in the UX section, I wanted an unfussy design. The Library announcement banner hides on scrolling, but the filter and search elements are made sticky. The nav button (and add book if logged in as a super-user) are fixed near the bottom of the screen. this is all to leave as much screen real estate as possiible for the viewing. 
+As noted in the UX section, I wanted an unfussy design. The Library announcement banner hides on scrolling, but the filter and search elements are made sticky. The nav and search buttons (and add book if logged in as a super-user) are fixed near the bottom of the screen. this is all to leave as much screen real estate as possiible for viewing available books. 
 
 In order to leave the interface uncluttered, I elected lo leave as much white space as possible (utilising a large left & right margin on desktop sizes - but removing it on smaller screens). For the books/tiles I used a simple complementary colour scheme via some help from https://www.canva.com/colors/color-wheel/.
 
 I chose Fjalla One and Noto Sans as my font pairing. I feel that Noto sans is exceptionally legible under almost any condition, whilst Fjalla One is eye catching without being obtrusive. 
 
-I used FontAwesome for the iconograpgy on the books. The simple concept of an Open Book being available - whilst Closed is unavailable I feel is a a concept underlined by the colour scheme used. 
+I used FontAwesome for the iconography on the books. The simple concept of an Open Book being available - whilst Closed is unavailable I feel is underlined by the colour scheme used. 
 
  
 ## Features
@@ -48,7 +50,7 @@ Past MVP, the library could evolve in a number of directions. I think what could
 
 In addiiton to Python / Django I used the following:
 
-Spectre.css - a very lightweigh and unobtrusive css frasmework. In hindsight, I would have perhaps worked quicker just utilizing 'vanilla' css / flexbox, but I enjoyed experimenting with a new framweork and grid paradigm. https://picturepan2.github.io/spectre/
+Spectre.css - a very lightweight and unobtrusive css frasmework. In hindsight, I would have perhaps worked quicker just utilizing 'vanilla' css / flexbox, but I enjoyed experimenting with a new framweork and grid paradigm. https://picturepan2.github.io/spectre/
 
 Whitenoise - a fantastic utility that streamlined the deployment process. It allowed me to host static files on Heroku, therefore circumventing the requirement for AWS (or similar) hosting. http://whitenoise.evans.io/en/stable/
 
@@ -57,7 +59,9 @@ PostgreSQL - fantastic open source database. https://www.postgresql.org/
 
 ## Testing
 
-The project was tested in multiple screen sizes. I implemnented Pytest to check logic / functions within the app. 
+The project was tested in multiple screen sizes. I utilised Google Dev tools to check at desktop and mobile resolutions, ensuring that media queries were used wherever pertinent. 
+
+
 
 
 ## Deployment
