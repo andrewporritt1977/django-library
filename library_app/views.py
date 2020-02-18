@@ -39,7 +39,7 @@ def login(request):
                 auth.login(user=user, request=request)
                 messages.success(request, "You have successfully logged into the Library")
                 return redirect(reverse('books'))
-            else: 
+            else:
                 login_form.add_error(None, "Sorry, some of your details are incorrect. Please try again")
 
     else:

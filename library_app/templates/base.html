@@ -11,25 +11,23 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>{% block page_title %}{% endblock %}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Sepctre CSS framework, Utilised mostly for grid -->
         <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+        <!-- Fontawesome -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
+        <!-- Static CSS -->
         <link rel="stylesheet" href="{% static 'main.css'%}">
+        <!-- Static JS files for dynamic pop up nav / search -->
         <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
     </head>
     <body class="container">
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
+        <!-- Header -->
         <header>
+            <!-- Library banner and Title -->
             <div class="banner-wrap">
                 <a href={% url 'books'%}><h1 class="title">{% block page_heading %}{% endblock %}</h1></a>
-                        
-                {% if user.is_superuser %}
-                    <a class="add" href="{% url 'add_book' %}"><i class="fas fa-plus-circle add-icon"></i></a>
-                {% endif %}
-
-                <a href="javascript:void(0)" class="navOpen" onclick="navUp()"><i class="fas fa-bars nav-icon"></i></a>
             </div>
+            <!-- Search / filter -->
             <div class="searchbox" id="popSearch">
                 <form class="searchform" action="{% url 'search' %}" method="get">
                     <input type="text" class="search_input" placeholder="Search" name="bkSearch" onChange="form.submit();">
@@ -44,15 +42,16 @@
                 </form>
             </div>
         </header>
+        <!-- Section -->
         <section class="library_container">
         <hr>
         {% block content %}
         {% endblock %}
             <div id="popNav" class="navBox">
 
-                <!-- nav links -->
-
+            <!-- nav links -->
                 <div id="navLink" class="nav-links">
+                <!-- User logged in version -->
                     {% if user.is_authenticated %}
                         <a href="{% url 'books' %}" class="pop-link">Home</a>
                             <br>
@@ -64,6 +63,7 @@
                             <br>
                         <a href="{% url 'user_card'%}" class="pop-link">Card</a>
                             <br>
+                <!-- User Logged Out -->
                     {% else %}
                         <a href="#" class="pop-link-faded">Home</a>
                             <br>
@@ -79,14 +79,15 @@
                 </div>
             </div>
         </section>
+        <!-- Footer -->
         <footer>
+        <!-- Icons for Nav, Filter, Add Book -->
+        <!-- Note 'add book' for librarian / superuser only -->
             {% if user.is_superuser %}
                 <a class="add" href="{% url 'add_book' %}" ><i  class="fas fa-plus-circle add-icon"></i></a>
             {% endif %}
-
             <a href="javascript:void(0)" class="navOpen" onclick="navUp()"><i class="fas fa-bars nav-icon"></i></a>
             <a href="javascript:void(0)" class="search" onclick="searchUp()"><i id="searchicon" class="fas fa-search-plus search-icon"></i></a>
         </footer>
-
     </body>
 </html>

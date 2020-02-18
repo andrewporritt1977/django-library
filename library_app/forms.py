@@ -9,7 +9,7 @@ class LibraryLoginForm(forms.Form):
     password = forms.CharField(widget=forms.PasswordInput)
 
 class UserSignupForm(UserCreationForm):
-    """ User Signup form goes here """
+    """ User Signup form """
 
     password1 = forms.CharField(
         label="Password", 
