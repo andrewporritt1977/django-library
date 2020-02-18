@@ -36,6 +36,8 @@ Library View       The main library view shows all books in the library catalogu
 
 Filter / Search     The filter / search functions allow a user to quickly define the book that they are looking for or the                          genre that they have an interest in. 
 
+Check in / Out      Once the user has found a book that they are interested in, they have the option to click on it and check                     the volume out. Once a book is checked out, it is unavailable to all other users. The book can only be                         checked back in by the original borrower.
+
 Library Card        At a glance, users can see all of their checked out books.
 
 Add Books           This functionality is hidden for all but the Librarian (superuser). 
@@ -56,21 +58,40 @@ Whitenoise - a fantastic utility that streamlined the deployment process. It all
 
 PostgreSQL - fantastic open source database. https://www.postgresql.org/
 
+Pipenv - Virtual environment (required as using a Mac)
+
+Python-Dotenv - used to manage the .env file. 
+
+iTerm - Terminal used specifically to manage the virtual env and internal server. 
+
 
 ## Testing
 
 The project was tested in multiple screen sizes. I utilised Google Dev tools to check at desktop and mobile resolutions, ensuring that media queries were used wherever pertinent. 
 
+HTML was validated via W3 validation tools https://validator.w3.org/#validate_by_input
+CSS was validated similarly at https://jigsaw.w3.org/css-validator/
 
+I ensured that all functions were manually checked, including the log in / out signup screens. Multiple books were added to test the add book functionality and specific books added to test edge cases.
 
+The book entitled "my word is my bond" was created specifically to test for titles booked out by other users.
+
+I manually compared the User / Superuser views to ensure that there are no visual artifacts, and also to confirm that the separation of features is as intended. 
+
+For instance, the following was manually tested:
+
+As a Librarian, when I am logged into the library, I want to see the cost of books, and do not want other borrowers to access this information. 
+
+I was able to confirm that the mock pricing appended to books is only viewavble when logged in as 'Librarian'
 
 ## Deployment
+
+Local Deployment was cumbersome as I'm currently using a Mac. It necessitated separate installs of python, django, and a virtual environment. I opted for Pipenv. The .env file was managed via python-dotenv. 
+Whilst working locally, I opted to use the inbuilt db.Sqlite3 - but migrated to Postgres on hosting with Heroku
 
 Deployed to Heroku using Gunicorn, Whitenoise, Postgres and dj-database-url. 
 In fairness, I had multiple issues with Heroku, most of which I had caused myself by not properly managing my Pipfile / Pipfile.lock. However I feel that I have learned a lot from this and would be more confident using Heroku in future. 
 The url for the delpoyment is https://warm-forest-68273.herokuapp.com/
-
-
 
 ## Credits
 
