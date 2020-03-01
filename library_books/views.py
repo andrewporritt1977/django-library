@@ -20,6 +20,14 @@ def check_out(request, pk):
     book.save()
     return render(request, "books.html", {"books" : books})
 
+def archive_book(request, pk):
+    books = Book.objects.all().order_by("title")
+    book = get_object_or_404(Book, pk=pk) if pk else None
+    if book.archived is False:
+        book.archived = True
+    book.save()
+    return render(request, "books.html", {"books" : books})
+
 def add_book(request):
     if request.method =="POST":
         form = AddBook(request.POST)
