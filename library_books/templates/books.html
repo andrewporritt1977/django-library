@@ -29,6 +29,10 @@
             <!-- book prices viewable by librarian / superuser -->
             {% if user.is_superuser %} 
                 <p>£{{ book.price}}</p>
+            <!-- update book and remove book go here -->
+                <a class="removeBook"><i class="crudButton removeButton fas fa-trash"></i></a>
+                <a class="updateBook"><i class="crudButton updateBookButton fas fa-edit"></i></a>
+                <a class="archiveButton"><i class="crudButton archiveButton fas fa-archive"></i></a>
             {% endif %}
             <!-- checked out books have a closed book icon -->
             {% if book.checkedOut and book.checked_by == user.username %}
