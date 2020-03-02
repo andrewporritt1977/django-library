@@ -403,7 +403,14 @@ a.navOpen{
     background-color:#F69559;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
+/* archived cards */
+.archived {
+    background-color: rgba(206,206,206,206);
+}
 
+.archived:hover {
+    background-color: rgba(168,168,168,168);
+}
 
 /* required to ensure whole book tile clickable for check-in / out without ugly anchor tag border */
 .hide-link{
