@@ -411,6 +411,14 @@ a.navOpen{
 .archived:hover {
     background-color: rgba(168,168,168,168);
 }
+/* hidden cards */
+.book-hidden{
+    display: none;
+}
+
+.book-hidden:hover {
+    display: none;
+}
 
 /* required to ensure whole book tile clickable for check-in / out without ugly anchor tag border */
 .hide-link{
