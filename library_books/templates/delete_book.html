@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block page_title %}Delete Book{% endblock %}
+
+{% block page_heading %}Library{% endblock %}
+
+
+{% block content %}
+<!-- edit_book imported from library_books/forms -->
+    <div class="add_book_container">
+        <form method="post">{% csrf_token %}
+            Are you sure you want to delete "{{ object }}" ?
+            <input type="submit" value="Submit" />
+        </form>
+    </div>
+{% endblock %}
