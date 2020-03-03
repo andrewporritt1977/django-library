@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block page_title %}Edit Book{% endblock %}
+
+{% block page_heading %}Library{% endblock %}
+
+
+{% block content %}
+<!-- edit_book imported from library_books/forms -->
+    <div class="add_book_container">
+        <form method="POST" class="add_book">{% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="save btn btn-default">Update</button>
+        </form>
+    </div>
+{% endblock %}

@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Book
-from .forms import AddBook
+from .forms import AddBook, EditBook
 
 # Create your views here.
 def all_books(request):
@@ -29,7 +29,7 @@ def archive_book(request, pk):
     return render(request, "books.html", {"books" : books})
 
 def add_book(request):
-    if request.method =="POST":
+    if request.method == "POST":
         form = AddBook(request.POST)
         if form.is_valid():
             book = form.save(commit=False)
@@ -39,3 +39,14 @@ def add_book(request):
         form = AddBook()
     return render(request, 'add_book.html', {'form' : form})
 
+def edit_book(request, pk):
+    book = get_object_or_404(Book, pk=pk)
+    if request.method == "POST":
+        form = EditBook(request.POST, instance=book)
+        if form.is_valid():
+            book = form.save(commit=False)
+            book.save()
+            return redirect('books')
+    else:
+        form = EditBook(instance=book)
+    return render(request, 'edit_book.html', {'form' : form})
