@@ -9,7 +9,7 @@
 <!-- edit_book imported from library_books/forms -->
     <div class="add_book_container">
         <form method="post">{% csrf_token %}
-            Are you sure you want to delete "{{ object }}" ?
+            Are you sure you want to delete "{{ object }}" ? It's not too late to <a href="{% url 'books'%}">cancel</a>
             <input type="submit" value="Submit" />
         </form>
     </div>
