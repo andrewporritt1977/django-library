@@ -95,11 +95,15 @@ footer{
 
 }
 
-/* check out buttons and components */
+/* check out / crud buttons and components */
 .check_btn {
+    position :relative;
+    top : 60%;
+    left: 50%;
+    transform: translateX(-50%);
     color : white;
     font-size: 1.7em;
-    width: 100%;
+    width: 20%;
     margin: 0 auto;
     text-align:center;
     border-style: none;
@@ -107,6 +111,29 @@ footer{
 
 .not-user-book {
     color : red ;
+}
+
+.archived-book-check {
+    color: darkgray;
+}
+
+.removeButton{
+    position : relative ;
+    top : 85%;
+    left : 8%;
+}
+
+.archiveButton{
+    position : relative ;
+    top : 85%;
+    left : 70%;
+}
+
+.updateBookButton{
+    position : relative ;
+    top : 85%;
+    left : 40% ;
+
 }
 
 /* pop up nav bar */
@@ -420,7 +447,6 @@ a.navOpen{
     display: none;
 }
 
-/* required to ensure whole book tile clickable for check-in / out without ugly anchor tag border */
 .hide-link{
     display : contents;
     z-index: 2;
@@ -430,17 +456,10 @@ a.navOpen{
     outline: none;
 }
 
-.hide_link_wrapper{
-    display : block;
-    height: 13rem;
-    width: 100%;
-}
-
 /* add book form */
 .add_book{
     text-align: center;
     padding-top : 5%;
-
 }
 
 .add_book_container{

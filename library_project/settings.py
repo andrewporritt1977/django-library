@@ -68,11 +68,13 @@ ROOT_URLCONF = 'library_project.urls'
 
 TEMPLATES = [
     {
+        
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS':[os.path.join(os.path.dirname(__file__), 'templates'),
         '/Users/andrewporritt/python-django/library_books/templates',
         '/Users/andrewporritt/python-django/library_app/templates/registration',
-        '/Users/andrewporritt/python-django/payments/templates'
+        '/Users/andrewporritt/python-django/payments/templates',
+        '/Users/andrewporritt/python-django/library_app/static/templates'
         ],
         'APP_DIRS': True,
         'OPTIONS': {

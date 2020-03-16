@@ -13,14 +13,13 @@
                 <!-- archived books unavailable for checkout. can be seen by librarian only. -->
                 {% if book.archived and user.is_superuser %}
                     <div class="lib_card archived col-xs-5 col-sm-5 col-md-3  col-lg-3 col-2">
-                        <div class="hide-link-wrapper">
+                        <div class="book-wrapper">
                             <p>{{ book.title}}</p>
                             <p>{{ book.author}}</p>
                             <p>{{ book.genre}}<p>
+                            <i class="fas fa-book check_btn archived-book-check"></i>
                 {% if user.is_superuser %} 
                             <p>£{{ book.price}}</p>
-                            <a class="removeBook" href="{% url 'delete_book' book.id %}"><i class="crudButton removeButton fas fa-trash"></i></a>
-                            <a class="updateBook" href="{% url 'edit_book' book.id%}"><i class="crudButton updateBookButton fas fa-edit"></i></a>
                             <a class="archiveButton" href="{% url 'archive_book' book.id %}"><i class="crudButton archiveButton fas fa-archive"></i></a>
                 {% endif %}
                         </div>
@@ -28,45 +27,44 @@
                 <!-- archived books hidden for normal users -->
                 {% elif book.archived %}
                     <div class="lib_card book-hidden col-xs-5 col-sm-5 col-md-3  col-lg-3 col-2">
-                        <div class="hide-link-wrapper">
+                        <div class="book-wrapper">
                             <p>{{ book.title}}</p>
                             <p>{{ book.author}}</p>
                             <p>{{ book.genre}}<p>
                 {% if user.is_superuser %} 
                             <p>£{{ book.price}}</p>
-                        <!-- update book and remove book go here -->
-                            <a class="removeBook" href="{% url 'delete_book' book.id %}"><i class="crudButton removeButton fas fa-trash"></i></a>
-                            <a class="updateBook" href="{% url 'edit_book' book.id%}"><i class="crudButton updateBookButton fas fa-edit"></i></a>
-                            <a class="archiveButton" href="{% url 'archive_book' book.id %}"><i class="crudButton archiveButton fas fa-archive"></i></a>
+                                <a class="removeBook" href="{% url 'delete_book' book.id %}"><i class="crudButton removeButton fas fa-trash"></i></a>
+                                <a class="updateBook" href="{% url 'edit_book' book.id%}"><i class="crudButton updateBookButton fas fa-edit"></i></a>
+                                <a class="archiveBook" href="{% url 'archive_book' book.id %}"><i class="crudButton archiveButton fas fa-archive"></i></a>
                 {% endif %}
                         </div>
                     </div>
                 <!-- books checked out by user are returnable -->
                 {% elif book.checkedOut and book.checked_by == user.username %}
                     <div class="lib_card checked col-xs-5 col-sm-5 col-md-3  col-lg-3 col-2">
-                        <a class="hide-link" method="get" type="submit" href="{% url 'check_out' book.id %}">
-                            <div class="hide-link-wrapper">
-                                <p>{{ book.title}}</p>
-                                <p>{{ book.author}}</p>
-                                <p>{{ book.genre}}<p>
+                        <div class="book-wrapper">
+                            <p>{{ book.title}}</p>
+                            <p>{{ book.author}}</p>
+                            <p>{{ book.genre}}<p>
+                            <a class="hide-link" method="get" type="submit" href="{% url 'check_out' book.id %}">
                                 <i class="fas fa-book check_btn"></i>
+                            </a>
                 {% if user.is_superuser %} 
-                                <p>£{{ book.price}}</p>
-                                <a class="removeBook" href="{% url 'delete_book' book.id %}"><i class="crudButton removeButton fas fa-trash"></i></a>
-                                <a class="updateBook" href="{% url 'edit_book' book.id%}"><i class="crudButton updateBookButton fas fa-edit"></i></a>
-                                <a class="archiveButton" href="{% url 'archive_book' book.id %}"><i class="crudButton archiveButton fas fa-archive"></i></a>
+                            <p>£{{ book.price}}</p>
+                            <a class="removeBook" href="{% url 'delete_book' book.id %}"><i class="crudButton removeButton fas fa-trash"></i></a>
+                            <a class="updateBook" href="{% url 'edit_book' book.id%}"><i class="crudButton updateBookButton fas fa-edit"></i></a>
+                            <a class="archiveButton" href="{% url 'archive_book' book.id %}"><i class="crudButton archiveButton fas fa-archive"></i></a>
                 {% endif %}
-                            </div>
-                        </a>
+                        </div>
                     </div>
                 <!-- books checked out by other users have that functionality removed. -->
                 {% elif book.checkedOut %}
                     <div class="lib_card checked col-xs-5 col-sm-5 col-md-3  col-lg-3 col-2">
-                        <div class="hide-link-wrapper">
+                        <div class="book-wrapper">
                             <p>{{ book.title}}</p>
                             <p>{{ book.author}}</p>
                             <p>{{ book.genre}}<p>
-                            <i class="fas fa-book check_btn"></i>
+                            <i class="fas fa-book check_btn not-user-book"></i>
                 {% if user.is_superuser %} 
                             <p>£{{ book.price}}</p>
                         <!-- update book and remove book go here -->
@@ -79,20 +77,20 @@
                 <!-- available books are viable for checking out-->
                 {% else %}
                     <div class="lib_card col-xs-5 col-sm-5 col-md-3 col-lg-3 col-2">
-                        <a class="hide-link" method="get" type="submit" href="{% url 'check_out' book.id %}">
-                            <div class="hide-link-wrapper">
-                                <p>{{ book.title}}</p>
-                                <p>{{ book.author}}</p>
-                                <p>{{ book.genre}}<p>
+                        <div class="book-wrapper">
+                            <p>{{ book.title}}</p>
+                            <p>{{ book.author}}</p>
+                            <p>{{ book.genre}}<p>
+                            <a class="hide-link" method="get" type="submit" href="{% url 'check_out' book.id %}">
                                 <i class="fas fa-book-open check_btn"></i>
+                            </a>
                 {% if user.is_superuser %} 
-                                <p>£{{ book.price}}</p>
-                                <a class="removeBook" href="{% url 'delete_book' book.id %}"><i class="crudButton removeButton fas fa-trash"></i></a>
-                                <a class="updateBook" href="{% url 'edit_book' book.id%}"><i class="crudButton updateBookButton fas fa-edit"></i></a>
-                                <a class="archiveButton" href="{% url 'archive_book' book.id %}"><i class="crudButton archiveButton fas fa-archive"></i></a>
+                            <p>£{{ book.price}}</p>
+                            <a class="hide-link" href="{% url 'delete_book' book.id %}"><i class="crudButton removeButton fas fa-trash"></i></a>
+                            <a class="hide-link" href="{% url 'edit_book' book.id%}"><i class="crudButton updateBookButton fas fa-edit"></i></a>
+                            <a class="hide-link" href="{% url 'archive_book' book.id %}"><i class="crudButton archiveButton fas fa-archive"></i></a>
                 {% endif %}
-                            </div>
-                        </a>
+                        </div>
                     </div>
                 {% endif %}
                 {% endfor %}
