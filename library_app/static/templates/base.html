@@ -55,25 +55,15 @@
                     {% if user.is_authenticated %}
                         <a href="{% url 'books' %}" class="pop-link">Home</a>
                             <br>
-                        <a href="#" class="pop-link-faded">Login</a>
-                            <br>
                         <a href="{% url 'logout' %}" class="pop-link">Logout</a>
-                            <br>
-                        <a href="#" class="pop-link-faded">Join</a>
                             <br>
                         <a href="{% url 'user_card'%}" class="pop-link">Card</a>
                             <br>
                 <!-- User Logged Out -->
                     {% else %}
-                        <a href="#" class="pop-link-faded">Home</a>
-                            <br>
                         <a href="{% url 'login' %}" class="pop-link">Login</a>
                             <br>
-                        <a href="#" class="pop-link-faded">Logout</a>
-                            <br>
                         <a href="{% url 'signup' %}" class="pop-link">Join</a>
-                            <br>
-                        <a href="#" class="pop-link-faded">Card</a>
                             <br>
                     {% endif %}
                 </div>
