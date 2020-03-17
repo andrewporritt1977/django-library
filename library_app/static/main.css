@@ -123,17 +123,48 @@ footer{
     left : 8%;
 }
 
+
+
 .archiveButton{
     position : relative ;
     top : 85%;
     left : 70%;
 }
 
+@media only screen and (max-width: 768px) {
+    .archiveButton{
+        position: relative;
+        left : 53%;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .archiveButton{
+        position: relative;
+        left : 48%;
+    }
+}
+
+
 .updateBookButton{
     position : relative ;
     top : 85%;
     left : 40% ;
 
+}
+
+@media only screen and (max-width: 768px) {
+    .updateBookButton{
+        position: relative;
+        left : 32%;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .updateBookButton{
+        position: relative;
+        left : 28%;
+    }
 }
 
 /* pop up nav bar */
@@ -207,6 +238,12 @@ a.pop-link-faded:visited{
     text-shadow: -1px -1px 0 #FFF, 1px -1px 0 #FFF, -1px 1px 0 #FFF, 1px 1px 0 #FFF;
 }
 
+@media only screen and (max-width: 320px) {
+    .nav-icon{
+        right : 73%;
+    }
+}
+
 a.navOpen{
     z-index: 2;
 }
@@ -261,6 +298,39 @@ a.navOpen{
     }
 }
 
+.search-icon{
+    color : black;
+    font-size: 4rem;
+    text-shadow: -1px -1px 0 #FFF, 1px -1px 0 #FFF, -1px 1px 0 #FFF, 1px 1px 0 #FFF;
+}
+
+.search{
+    position: fixed;
+    left : 75%;
+    top : 85%;
+}
+
+@media only screen and (max-width: 320px) {
+    .search{
+        left : 70%;
+    }
+}
+
+.search-icon:visited{
+    color : black;
+    text-decoration: none;
+}
+
+
+/* add book icon */
+
+
+.add-icon{
+    color : black;
+    font-size: 4rem;
+    text-shadow: -1px -1px 0 #FFF, 1px -1px 0 #FFF, -1px 1px 0 #FFF, 1px 1px 0 #FFF;
+}
+
 .add{
     position: fixed;
     left : 47%;
@@ -274,31 +344,11 @@ a.navOpen{
     }
 }
 
-.search-icon{
-    color : black;
-    font-size: 4rem;
-    text-shadow: -1px -1px 0 #FFF, 1px -1px 0 #FFF, -1px 1px 0 #FFF, 1px 1px 0 #FFF;
+@media only screen and (max-width: 320px) {
+    .add{
+        left : 36%;
+    }
 }
-
-.search-icon:visited{
-    color : black;
-    text-decoration: none;
-}
-
-
-/* add book icon */
-.search{
-    position: fixed;
-    left : 75%;
-    top : 85%;
-}
-
-.add-icon{
-    color : black;
-    font-size: 4rem;
-    text-shadow: -1px -1px 0 #FFF, 1px -1px 0 #FFF, -1px 1px 0 #FFF, 1px 1px 0 #FFF;
-}
-
 
 /* registration forms */
 .signup{
@@ -338,7 +388,7 @@ a.navOpen{
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    height : 260px;
+    height : 300px;
     width : 160px;
     box-sizing: border-box;
 }
@@ -389,7 +439,7 @@ a.navOpen{
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    height : 260px;
+    height : 300px;
     width : 160px;
     box-sizing: border-box;
 }
@@ -409,7 +459,7 @@ a.navOpen{
     .lib_card{
         margin: 0.1rem;
         padding : .2rem;
-        height : 250px;
+        height : 300px;
         width : 150px;
         box-sizing: border-box;
     }
@@ -420,7 +470,7 @@ a.navOpen{
     .lib_card{
         margin: 0.1rem;
         padding : .2rem;
-        height : 250px;
+        height : 300px;
         width : 130px;
         box-sizing: border-box;
     }
