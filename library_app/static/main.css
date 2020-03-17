@@ -145,6 +145,13 @@ footer{
     }
 }
 
+.un-archiveButton{
+    position : relative;
+    top : 85%;
+    left : 22%;
+    z-index: +1;
+}
+
 
 .updateBookButton{
     position : relative ;

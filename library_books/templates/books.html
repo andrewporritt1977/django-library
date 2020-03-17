@@ -20,7 +20,7 @@
                             <i class="fas fa-book check_btn archived-book-check"></i>
                 {% if user.is_superuser %} 
                             <p>£{{ book.price}}</p>
-                            <a class="archiveButton" href="{% url 'archive_book' book.id %}"><i class="crudButton archiveButton fas fa-archive"></i></a>
+                            <a class="un-archiveButton" href="{% url 'archive_book' book.id %}"><i class="crudButton un-archiveButton fas fa-archive"></i></a>
                 {% endif %}
                         </div>
                     </div>
@@ -33,9 +33,7 @@
                             <p>{{ book.genre}}<p>
                 {% if user.is_superuser %} 
                             <p>£{{ book.price}}</p>
-                                <a class="removeBook" href="{% url 'delete_book' book.id %}"><i class="crudButton removeButton fas fa-trash"></i></a>
-                                <a class="updateBook" href="{% url 'edit_book' book.id%}"><i class="crudButton updateBookButton fas fa-edit"></i></a>
-                                <a class="archiveBook" href="{% url 'archive_book' book.id %}"><i class="crudButton archiveButton fas fa-archive"></i></a>
+                               
                 {% endif %}
                         </div>
                     </div>
