@@ -4,6 +4,12 @@ Django Library is a Library Management Tool that allows users to search for book
 Checked-out books are viewable for the user via their own online library card. 
 
 The inspiration for this was based on an existing need in the office of my current employer. Currently there is a small cache of books relevant to the business. However there is no real way of tracking who has borrowed a volume. In addition, those based on client side have no way of being able to access the books, or even see what would be available. 
+
+## Notes for Evaluation of project. 
+
+Due to the multi tiered security of this project - as well as it's intended purpose, much of the functionality is only available to the Superuser (or librarian). In order to better assess crud functionality as well as other librarian only features - please use the following logins.
+
+Login - andrewporritt Password Barros99
  
 ## UX
  
@@ -41,6 +47,10 @@ Check in / Out      Once the user has found a book that they are interested in, 
 Library Card        At a glance, users can see all of their checked out books.
 
 Add Books           This functionality is hidden for all but the Librarian (superuser). 
+
+Archive Books       Books can be archived (they will remain on the database, but are unavailable for borrowing and hidden for                     all but the super-user) They can also be un-archived, again only by a super-user. 
+
+Delete Books        A function to remove unrequired volumes. Confirmation is required befored the action is progressed. 
 
 Stripe Integration  To offer users the ability to pay a membership subscription online. (This is not required in a real world                     application for the app. It was added to fulfil the requirements of the brief). 
 
