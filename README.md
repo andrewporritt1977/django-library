@@ -10,8 +10,8 @@ The inspiration for this was based on an existing need in the office of my curre
 Due to the multi tiered security of this project - as well as it's intended purpose, much of the functionality is only available to the Superuser (or librarian). In order to better assess crud functionality as well as other librarian only features - please use the following logins.
 
 ...
-Login - andrewporritt 
-Password - Barros99
+    Login - andrewporritt 
+    Password - Barros99
 ...
  
 ## UX
